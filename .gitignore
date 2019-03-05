@@ -34,11 +34,7 @@ build
 out/
 .kotlintest
 local.properties
-app/app.iml
-app/KotlinMultiplatformApp.app.commonMain.iml
-app/KotlinMultiplatformApp.app.commonTest.iml
-app/KotlinMultiplatformApp.app.iosMain.iml
-app/KotlinMultiplatformApp.app.iosTest.iml
+*.iml
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
