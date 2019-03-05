@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		251555E4B9A26E5A10DC04A2 /* Pods_github_multiplatform_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16C0AACD71397E7D67208782 /* Pods_github_multiplatform_example.framework */; };
 		3A49E3EC2142B66B001B54D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A49E3EB2142B66B001B54D3 /* Assets.xcassets */; };
 		3A49E3EF2142B66B001B54D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A49E3ED2142B66B001B54D3 /* LaunchScreen.storyboard */; };
 		3A49E3FD2142B704001B54D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49E3F92142B704001B54D3 /* AppDelegate.swift */; };
@@ -31,7 +30,6 @@
 
 /* Begin PBXFileReference section */
 		11FB9C164B3DAC134CF811D6 /* Pods-Dribbble app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dribbble app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dribbble app/Pods-Dribbble app.debug.xcconfig"; sourceTree = "<group>"; };
-		16C0AACD71397E7D67208782 /* Pods_github_multiplatform_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_github_multiplatform_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35D195DE1A95A1B72514C252 /* Pods-Dribbble app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dribbble app.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dribbble app/Pods-Dribbble app.release.xcconfig"; sourceTree = "<group>"; };
 		3A49E3E12142B66A001B54D3 /* Dribbble app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dribbble app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A49E3EB2142B66B001B54D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -39,8 +37,6 @@
 		3A49E3F02142B66B001B54D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A49E3F92142B704001B54D3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56A06C98166AD5A5DBA39693 /* Pods_Dribbble_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dribbble_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9675E4A17601F5EB979DD37F /* Pods-github-multiplatform-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github-multiplatform-example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-github-multiplatform-example/Pods-github-multiplatform-example.debug.xcconfig"; sourceTree = "<group>"; };
-		D7B565CEAE183B31F2070042 /* Pods-github-multiplatform-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github-multiplatform-example.release.xcconfig"; path = "Pods/Target Support Files/Pods-github-multiplatform-example/Pods-github-multiplatform-example.release.xcconfig"; sourceTree = "<group>"; };
 		D7E79D1E21A6251F00FA676D /* shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = shared.framework; path = "../shared/build/xcode-frameworks/shared.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,7 +45,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				251555E4B9A26E5A10DC04A2 /* Pods_github_multiplatform_example.framework in Frameworks */,
 				88FD33E8D24904C599886630 /* Pods_Dribbble_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,8 +92,6 @@
 		CCAFA9EA45D3D8BA7109D77A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9675E4A17601F5EB979DD37F /* Pods-github-multiplatform-example.debug.xcconfig */,
-				D7B565CEAE183B31F2070042 /* Pods-github-multiplatform-example.release.xcconfig */,
 				11FB9C164B3DAC134CF811D6 /* Pods-Dribbble app.debug.xcconfig */,
 				35D195DE1A95A1B72514C252 /* Pods-Dribbble app.release.xcconfig */,
 			);
@@ -109,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				D7E79D1E21A6251F00FA676D /* shared.framework */,
-				16C0AACD71397E7D67208782 /* Pods_github_multiplatform_example.framework */,
 				56A06C98166AD5A5DBA39693 /* Pods_Dribbble_app.framework */,
 			);
 			name = Frameworks;
@@ -370,16 +362,15 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit\"",
-					"$(PROJECT_DIR)/github-multiplatform-example",
+					"\"$(PROJECT_DIR)/Dribbble app\"",
 					"$(SRCROOT)/../shared/build/xcode-frameworks",
 				);
-				INFOPLIST_FILE = "github-multiplatform-example/Info.plist";
+				INFOPLIST_FILE = "Dribbble app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "adrianbukros.com.github-multiplatform-example";
+				PRODUCT_BUNDLE_IDENTIFIER = karumi.com.dribbble;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -396,16 +387,15 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit\"",
-					"$(PROJECT_DIR)/github-multiplatform-example",
+					"\"$(PROJECT_DIR)/Dribbble app\"",
 					"$(SRCROOT)/../shared/build/xcode-frameworks",
 				);
-				INFOPLIST_FILE = "github-multiplatform-example/Info.plist";
+				INFOPLIST_FILE = "Dribbble app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "adrianbukros.com.github-multiplatform-example";
+				PRODUCT_BUNDLE_IDENTIFIER = karumi.com.dribbble;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
