@@ -40,7 +40,6 @@ dependencies {
     implementation(project(":shared"))
 }
 
-
 ktlint {
     version.set("0.30.0")
     debug.set(true)
@@ -55,4 +54,4 @@ ktlint {
     }
 }
 
-apply(from = "gradleconfig/lint.gradle")
+apply(from = "../shared/gradleconfig/lint.gradle")

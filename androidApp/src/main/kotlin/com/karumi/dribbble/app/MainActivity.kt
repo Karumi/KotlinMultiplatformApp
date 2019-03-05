@@ -7,7 +7,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-         title = "Dribbble"
+        title = "Dribbble"
         setContentView(R.layout.activity_main)
     }
 }
