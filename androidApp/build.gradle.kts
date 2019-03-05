@@ -1,11 +1,12 @@
 import org.jetbrains.kotlin.config.KotlinCompilerVersion
+import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 plugins {
     id("com.android.application")
     id("kotlin-android")
     id("kotlin-android-extensions")
     id("io.gitlab.arturbosch.detekt")
-
+    id("org.jlleitschuh.gradle.ktlint")
 }
 
 android {
@@ -38,3 +39,20 @@ dependencies {
     implementation(kotlin("stdlib-jdk7", KotlinCompilerVersion.VERSION))
     implementation(project(":shared"))
 }
+
+
+ktlint {
+    version.set("0.30.0")
+    debug.set(true)
+    verbose.set(true)
+    android.set(false)
+    outputToConsole.set(true)
+    reporters.set(setOf(ReporterType.PLAIN, ReporterType.CHECKSTYLE))
+    ignoreFailures.set(true)
+    filter {
+        exclude("**/generated/**")
+        include("**/kotlin/**")
+    }
+}
+
+apply(from = "gradleconfig/lint.gradle")

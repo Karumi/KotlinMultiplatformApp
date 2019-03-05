@@ -1,22 +1,8 @@
-task ktlint(type: JavaExec, group: "verification") {
-    description = "Check Kotlin code style."
-    classpath = configurations.ktlint
-    main = "com.github.shyiko.ktlint.Main"
-    args "src/**/*.kt"
-}
-check.dependsOn ktlint
-
-task ktlintFormat(type: JavaExec, group: "formatting") {
-    description = "Fix Kotlin code style deviations."
-    classpath = configurations.ktlint
-    main = "com.github.shyiko.ktlint.Main"
-    args "-F", "src/**/*.kt"
-}
-
 detekt {
     toolVersion = "1.0.0-RC14"
-    input = files("src/commonMain/kotlin", "src/commonTest/kotlin", "src/iosMain/kotlin", "src/iosTest/kotlin", "src/main/java")
+    input = files("src/main/kotlin")
     filters = ".*/resources/.*,.*/build/.*"
 }
 
-check.dependsOn "detekt" 
+check.dependsOn ktlintCheck
+check.dependsOn "detekt"
