@@ -1,12 +1,5 @@
-pluginManagement {
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.id == "kotlin-multiplatform") {
-                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
-            }
-        }
-    }
-}
+enableFeaturePreview("GRADLE_METADATA")
+
 rootProject.name = 'KotlinMultiplatformApp'
 
-include ':app'
+include "shared", "androidApp"
