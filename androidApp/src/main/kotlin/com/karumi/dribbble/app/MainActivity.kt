@@ -1,6 +1,5 @@
-package com.adrianbukros.github.example
+package com.karumi.dribbble.app
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 
@@ -8,7 +7,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        title = "GitHub Login"
+        title = "Dribbble"
         setContentView(R.layout.activity_main)
     }
 }

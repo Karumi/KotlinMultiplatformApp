@@ -5,6 +5,7 @@ plugins {
     id("kotlin-android")
     id("kotlin-android-extensions")
     id("io.gitlab.arturbosch.detekt")
+
 }
 
 android {
@@ -22,6 +23,10 @@ android {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
+    }
+
+    sourceSets {
+        getByName("main").java.srcDirs("src/main/kotlin")
     }
 }
 
