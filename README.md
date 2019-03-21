@@ -1,10 +1,10 @@
 # ![Karumi logo][karumilogo] Kotlin multiplatform App
 
-Application example using Kotlin multiplatform getting information from Dribble.
+Application example using Kotlin multiplatform getting information from Dribbble.
 
 ### Import project
 
-If you have a problem an error like "SDK location not found" that means you need to define SDK locations path in `local.properties` for Android and NDK.
+If you receive an error message reading "SDK location not found" while building the iOS project that means you need to define the SDK location path in a `local.properties` file for the Android SDK and NDK.
 
 > local.properties:
 ```
@@ -15,7 +15,7 @@ sdk.dir=/Users/<username>/Library/Android/sdk
 License
 -------
 
-    Copyright 2018 Karumi
+    Copyright 2019 Karumi
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
