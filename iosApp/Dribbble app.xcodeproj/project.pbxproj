@@ -10,9 +10,20 @@
 		3A49E3EC2142B66B001B54D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A49E3EB2142B66B001B54D3 /* Assets.xcassets */; };
 		3A49E3EF2142B66B001B54D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A49E3ED2142B66B001B54D3 /* LaunchScreen.storyboard */; };
 		3A49E3FD2142B704001B54D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49E3F92142B704001B54D3 /* AppDelegate.swift */; };
+		4955FCEC22454FA6009C1503 /* Dribbble_app_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4955FCEB22454FA6009C1503 /* Dribbble_app_Tests.swift */; };
 		88FD33E8D24904C599886630 /* Pods_Dribbble_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A06C98166AD5A5DBA39693 /* Pods_Dribbble_app.framework */; };
 		D7E79D2121A6267400FA676D /* shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7E79D1E21A6251F00FA676D /* shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4955FCEE22454FA6009C1503 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A49E3D92142B669001B54D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A49E3E02142B669001B54D3;
+			remoteInfo = "Dribbble app";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		3A6642AD21A5564800AD0773 /* Embed Frameworks */ = {
@@ -36,6 +47,9 @@
 		3A49E3EE2142B66B001B54D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A49E3F02142B66B001B54D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A49E3F92142B704001B54D3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4955FCE922454FA6009C1503 /* Dribbble app Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dribbble app Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4955FCEB22454FA6009C1503 /* Dribbble_app_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dribbble_app_Tests.swift; sourceTree = "<group>"; };
+		4955FCED22454FA6009C1503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56A06C98166AD5A5DBA39693 /* Pods_Dribbble_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dribbble_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E79D1E21A6251F00FA676D /* shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = shared.framework; path = "../shared/build/xcode-frameworks/shared.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,12 +63,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4955FCE622454FA6009C1503 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		3A49E3D82142B669001B54D3 = {
 			isa = PBXGroup;
 			children = (
+				4955FCEA22454FA6009C1503 /* Dribbble app Tests */,
 				E152E41AFF5D5F3CBF156415 /* Frameworks */,
 				3A49E3E32142B66A001B54D3 /* Dribbble app */,
 				CCAFA9EA45D3D8BA7109D77A /* Pods */,
@@ -66,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				3A49E3E12142B66A001B54D3 /* Dribbble app.app */,
+				4955FCE922454FA6009C1503 /* Dribbble app Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +110,15 @@
 				3A49E3F92142B704001B54D3 /* AppDelegate.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		4955FCEA22454FA6009C1503 /* Dribbble app Tests */ = {
+			isa = PBXGroup;
+			children = (
+				4955FCEB22454FA6009C1503 /* Dribbble_app_Tests.swift */,
+				4955FCED22454FA6009C1503 /* Info.plist */,
+			);
+			path = "Dribbble app Tests";
 			sourceTree = "<group>";
 		};
 		CCAFA9EA45D3D8BA7109D77A /* Pods */ = {
@@ -130,19 +162,41 @@
 			productReference = 3A49E3E12142B66A001B54D3 /* Dribbble app.app */;
 			productType = "com.apple.product-type.application";
 		};
+		4955FCE822454FA6009C1503 /* Dribbble app Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4955FCF222454FA6009C1503 /* Build configuration list for PBXNativeTarget "Dribbble app Tests" */;
+			buildPhases = (
+				4955FCE522454FA6009C1503 /* Sources */,
+				4955FCE622454FA6009C1503 /* Frameworks */,
+				4955FCE722454FA6009C1503 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4955FCEF22454FA6009C1503 /* PBXTargetDependency */,
+			);
+			name = "Dribbble app Tests";
+			productName = "Dribbble app Tests";
+			productReference = 4955FCE922454FA6009C1503 /* Dribbble app Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		3A49E3D92142B669001B54D3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					3A49E3E02142B669001B54D3 = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1010;
+					};
+					4955FCE822454FA6009C1503 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 3A49E3E02142B669001B54D3;
 					};
 				};
 			};
@@ -160,6 +214,7 @@
 			projectRoot = "";
 			targets = (
 				3A49E3E02142B669001B54D3 /* Dribbble app */,
+				4955FCE822454FA6009C1503 /* Dribbble app Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -171,6 +226,13 @@
 			files = (
 				3A49E3EF2142B66B001B54D3 /* LaunchScreen.storyboard in Resources */,
 				3A49E3EC2142B66B001B54D3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4955FCE722454FA6009C1503 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +286,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4955FCE522454FA6009C1503 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4955FCEC22454FA6009C1503 /* Dribbble_app_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4955FCEF22454FA6009C1503 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A49E3E02142B669001B54D3 /* Dribbble app */;
+			targetProxy = 4955FCEE22454FA6009C1503 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3A49E3ED2142B66B001B54D3 /* LaunchScreen.storyboard */ = {
@@ -402,6 +480,51 @@
 			};
 			name = Release;
 		};
+		4955FCF022454FA6009C1503 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BD48FG9BMV;
+				INFOPLIST_FILE = "Dribbble app Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.karumi.Dribbble-app-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dribbble app.app/Dribbble app";
+			};
+			name = Debug;
+		};
+		4955FCF122454FA6009C1503 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BD48FG9BMV;
+				INFOPLIST_FILE = "Dribbble app Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.karumi.Dribbble-app-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dribbble app.app/Dribbble app";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -419,6 +542,15 @@
 			buildConfigurations = (
 				3A49E3F42142B66B001B54D3 /* Debug */,
 				3A49E3F52142B66B001B54D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4955FCF222454FA6009C1503 /* Build configuration list for PBXNativeTarget "Dribbble app Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4955FCF022454FA6009C1503 /* Debug */,
+				4955FCF122454FA6009C1503 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
