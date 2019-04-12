@@ -17,14 +17,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/dribbbleImage"
+            android:id="@+id/shotImage"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             tools:ignore="ContentDescription" />
     </FrameLayout>
 
     <TextView
-        android:id="@+id/dribbbleName"
+        android:id="@+id/shotName"
         style="@style/Text.List.DribbbleName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,11 +33,11 @@
         tools:text="Saguaro National Park" />
 
     <TextView
-        android:id="@+id/dribbbleAuthorName"
+        android:id="@+id/shotAuthorName"
         style="@style/Text.List.AuthorName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/dribbbleName"
+        app:layout_constraintTop_toBottomOf="@id/shotName"
         tools:text="by Nick Slater" />
 
 </android.support.constraint.ConstraintLayout>

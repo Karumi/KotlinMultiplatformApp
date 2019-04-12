@@ -9,7 +9,7 @@ import com.pedrogomez.renderers.RendererBuilder
 
 class MainActivity : AppCompatActivity() {
 
-  private lateinit var adapter: RVRendererAdapter<DribbbleItem>
+  private lateinit var adapter: RVRendererAdapter<ShotItem>
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -19,14 +19,14 @@ class MainActivity : AppCompatActivity() {
   }
 
   private fun configureRecyclerView() {
-    val builder = RendererBuilder<DribbbleItem>().bind(DribbbleItem::class.java, DribbbleRenderer())
-    adapter = RVRendererAdapter<DribbbleItem>(builder)
+    val builder = RendererBuilder<ShotItem>().bind(ShotItem::class.java, DribbbleRenderer())
+    adapter = RVRendererAdapter<ShotItem>(builder)
     val recyclerView = findViewById<RecyclerView>(R.id.dribbbleList)
 
     recyclerView.layoutManager = GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false)
     recyclerView.adapter = adapter
 
-    adapter.addAll((0..100).map { (DribbbleItem("", "", "Saguaro National Park", "Nick Slater")) })
+    adapter.addAll((0..100).map { (ShotItem("", "", "Saguaro National Park", "Nick Slater")) })
     adapter.notifyDataSetChanged()
   }
 }
