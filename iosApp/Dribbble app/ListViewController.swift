@@ -18,7 +18,7 @@ class ListViewController: UIViewController, DribbbleShotListPresenterView {
     }
 
     func plusAssign(shots: [DribbbleShot]) {
-        let newItems = shots.map { PhotoListItem(id: $0.id, thumbnailUrl: $0.thumbnailUrl, name: $0.name, authorName: $0.authorName) }
+        let newItems = shots.map(PhotoListItem.init)
         items.append(contentsOf: newItems)
         allItemsCollectionView.reloadData()
     }
@@ -51,4 +51,11 @@ struct PhotoListItem {
     let thumbnailUrl: String
     let name: String
     let authorName: String
+
+    init(item: DribbbleShot) {
+        self.id = item.id
+        self.thumbnailUrl = item.thumbnailUrl
+        self.name = item.name
+        self.authorName = item.authorName
+    }
 }
