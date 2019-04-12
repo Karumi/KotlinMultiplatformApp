@@ -1,0 +1,70 @@
+import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
+
+apply plugin: "kotlin-multiplatform"
+apply plugin: "kotlinx-serialization"
+apply plugin: "io.gitlab.arturbosch.detekt"
+apply plugin: "org.jlleitschuh.gradle.ktlint"
+
+kotlin {
+    targets {
+        fromPreset(presets.jvm, "jvm")
+
+        fromPreset(presets.iosX64, "ios_x86_64")
+        fromPreset(presets.iosArm64, "ios_arm64")
+        configure([ios_x86_64, ios_arm64]) {
+            compilations.main.outputKinds("FRAMEWORK")
+        }
+    }
+    
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation "org.jetbrains.kotlin:kotlin-stdlib"
+            }
+        }
+        jvmMain {
+            dependencies {
+                implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+            }
+        }
+        iosMain {
+            dependencies {
+            }
+        }
+        configure([ios_x86_64Main, ios_arm64Main]) {
+            dependsOn iosMain
+        }
+    }
+}
+
+configurations {
+    compileClasspath
+}
+
+task packForXCode(type: Sync) {
+    final File frameworkDir = new File(buildDir, "xcode-frameworks")
+
+    final String configuration = project.findProperty("CONFIGURATION")?.toUpperCase() ?: "DEBUG"
+    final String arch = project.findProperty("ARCHS") ?: "x86_64"
+
+    dependsOn kotlin.targets."ios_${arch}".compilations.main.linkTaskName("FRAMEWORK", configuration)
+
+    from { kotlin.targets."ios_${arch}".compilations.main.getBinary("FRAMEWORK", configuration).parentFile }
+    into frameworkDir
+}
+
+tasks.build.dependsOn packForXCode
+
+ktlint {
+    version = "0.30.0"
+    verbose = true
+    android = false
+    outputToConsole = true
+    reporters = [ReporterType.PLAIN, ReporterType.CHECKSTYLE]
+    filter {
+        exclude("**/generated/**")
+        include("**/kotlin/**")
+    }
+}
+
+apply from: "gradleconfig/lint.gradle"

@@ -1,15 +1,6 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, "11.4"
 
-use_frameworks!
-
-target 'iosApp' do
-    pod 'SwiftLint'
+target "Dribbble app" do
+  use_frameworks!
+  pod "SwiftLint"
 end
-
-target 'iosAppTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-
