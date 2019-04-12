@@ -10,8 +10,9 @@
 		3A49E3EC2142B66B001B54D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A49E3EB2142B66B001B54D3 /* Assets.xcassets */; };
 		3A49E3EF2142B66B001B54D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A49E3ED2142B66B001B54D3 /* LaunchScreen.storyboard */; };
 		3A49E3FD2142B704001B54D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49E3F92142B704001B54D3 /* AppDelegate.swift */; };
+		4979FDC522607CD4008BF2C5 /* main.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4979FDC422607CD4008BF2C5 /* main.framework */; };
+		4979FDC622607CD4008BF2C5 /* main.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4979FDC422607CD4008BF2C5 /* main.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		88FD33E8D24904C599886630 /* Pods_Dribbble_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A06C98166AD5A5DBA39693 /* Pods_Dribbble_app.framework */; };
-		D7E79D2121A6267400FA676D /* shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7E79D1E21A6251F00FA676D /* shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,13 +26,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		3A6642AD21A5564800AD0773 /* Embed Frameworks */ = {
+		4979FDC722607CD4008BF2C5 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D7E79D2121A6267400FA676D /* shared.framework in Embed Frameworks */,
+				4979FDC622607CD4008BF2C5 /* main.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,6 +49,7 @@
 		3A49E3F92142B704001B54D3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4955FCE922454FA6009C1503 /* Dribbble app Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dribbble app Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4955FCED22454FA6009C1503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4979FDC422607CD4008BF2C5 /* main.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = main.framework; path = "../shared/build/xcode-frameworks/main.framework"; sourceTree = "<group>"; };
 		56A06C98166AD5A5DBA39693 /* Pods_Dribbble_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dribbble_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E79D1E21A6251F00FA676D /* shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = shared.framework; path = "../shared/build/xcode-frameworks/shared.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88FD33E8D24904C599886630 /* Pods_Dribbble_app.framework in Frameworks */,
+				4979FDC522607CD4008BF2C5 /* main.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +77,7 @@
 		3A49E3D82142B669001B54D3 = {
 			isa = PBXGroup;
 			children = (
+				4979FDC422607CD4008BF2C5 /* main.framework */,
 				4955FCEA22454FA6009C1503 /* Dribbble app Tests */,
 				E152E41AFF5D5F3CBF156415 /* Frameworks */,
 				3A49E3E32142B66A001B54D3 /* Dribbble app */,
@@ -148,7 +152,7 @@
 				3A49E3DD2142B669001B54D3 /* Sources */,
 				3A49E3DE2142B669001B54D3 /* Frameworks */,
 				3A49E3DF2142B669001B54D3 /* Resources */,
-				3A6642AD21A5564800AD0773 /* Embed Frameworks */,
+				4979FDC722607CD4008BF2C5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
