@@ -19,20 +19,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="192" height="204"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uyq-qh-9Ga">
+                        <rect key="frame" x="0.0" y="0.0" width="192" height="169.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eiD-pr-Gu4">
-                        <rect key="frame" x="0.0" y="0.0" width="192" height="153.5"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="eiD-pr-Gu4" secondAttribute="height" multiplier="5:4" id="jaN-Bg-Sjz"/>
-                        </constraints>
+                        <rect key="frame" x="0.0" y="0.0" width="192" height="169.5"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saguaro National Park" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLa-mU-7VI">
-                        <rect key="frame" x="0.0" y="161.5" width="192" height="14.5"/>
+                        <rect key="frame" x="0.0" y="177.5" width="192" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="by Nick Slater" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqP-3L-qtE">
-                        <rect key="frame" x="0.0" y="176" width="192" height="28"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Nick Slater" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqP-3L-qtE">
+                        <rect key="frame" x="0.0" y="192" width="192" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -40,13 +41,17 @@
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="Uyq-qh-9Ga" firstAttribute="trailing" secondItem="eiD-pr-Gu4" secondAttribute="trailing" id="45L-dL-aw6"/>
+                <constraint firstItem="Uyq-qh-9Ga" firstAttribute="bottom" secondItem="eiD-pr-Gu4" secondAttribute="bottom" id="8PP-c6-WzC"/>
                 <constraint firstItem="eiD-pr-Gu4" firstAttribute="trailing" secondItem="bG4-PW-JUI" secondAttribute="trailing" id="8Un-4s-2Se"/>
                 <constraint firstItem="gqP-3L-qtE" firstAttribute="top" secondItem="eLa-mU-7VI" secondAttribute="bottom" id="8pA-HU-cGK"/>
                 <constraint firstItem="gqP-3L-qtE" firstAttribute="leading" secondItem="bG4-PW-JUI" secondAttribute="leading" id="RuQ-E0-bHN"/>
+                <constraint firstItem="Uyq-qh-9Ga" firstAttribute="top" secondItem="eiD-pr-Gu4" secondAttribute="top" id="ZTa-S8-bfH"/>
                 <constraint firstItem="eiD-pr-Gu4" firstAttribute="leading" secondItem="bG4-PW-JUI" secondAttribute="leading" id="bRU-DG-Ekw"/>
                 <constraint firstItem="eLa-mU-7VI" firstAttribute="top" secondItem="eiD-pr-Gu4" secondAttribute="bottom" constant="8" id="baT-gU-5KT"/>
                 <constraint firstItem="bG4-PW-JUI" firstAttribute="bottom" secondItem="gqP-3L-qtE" secondAttribute="bottom" id="bx6-xU-C7B"/>
                 <constraint firstItem="bG4-PW-JUI" firstAttribute="trailing" secondItem="gqP-3L-qtE" secondAttribute="trailing" id="dLR-cg-nxs"/>
+                <constraint firstItem="Uyq-qh-9Ga" firstAttribute="leading" secondItem="eiD-pr-Gu4" secondAttribute="leading" id="hJl-yW-72X"/>
                 <constraint firstItem="eiD-pr-Gu4" firstAttribute="top" secondItem="bG4-PW-JUI" secondAttribute="top" id="lm7-0d-NRC"/>
                 <constraint firstItem="eLa-mU-7VI" firstAttribute="leading" secondItem="bG4-PW-JUI" secondAttribute="leading" id="ymg-na-D6m"/>
                 <constraint firstItem="bG4-PW-JUI" firstAttribute="trailing" secondItem="eLa-mU-7VI" secondAttribute="trailing" id="zvN-Jd-CqV"/>
@@ -55,6 +60,7 @@
             <size key="customSize" width="192" height="204"/>
             <connections>
                 <outlet property="authorName" destination="gqP-3L-qtE" id="IJw-g1-CiK"/>
+                <outlet property="imageBackView" destination="Uyq-qh-9Ga" id="jX7-Xo-ld4"/>
                 <outlet property="imageView" destination="eiD-pr-Gu4" id="M8v-14-cnK"/>
                 <outlet property="name" destination="eLa-mU-7VI" id="b3Q-33-bbJ"/>
             </connections>
