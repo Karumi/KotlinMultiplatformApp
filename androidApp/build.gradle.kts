@@ -36,6 +36,8 @@ dependencies {
     implementation("com.android.support.constraint:constraint-layout:1.1.3")
     implementation("com.android.support:appcompat-v7:28.0.0")
     implementation("com.android.support:recyclerview-v7:28.0.0")
+    implementation("com.android.support:recyclerview-v7:28.0.0")
+    implementation("com.github.pedrovgs:renderers:3.4.0")
     implementation(kotlin("stdlib-jdk7", KotlinCompilerVersion.VERSION))
     implementation(project(":shared"))
 }

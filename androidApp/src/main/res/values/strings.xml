@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Dribbble</string>
+    <string name="dribbbles_list_title">Dribbble</string>
 </resources>

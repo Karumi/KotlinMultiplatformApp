@@ -1,7 +1,15 @@
 <resources>
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Text" />
+
+    <style name="Text.Title">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 </resources>
