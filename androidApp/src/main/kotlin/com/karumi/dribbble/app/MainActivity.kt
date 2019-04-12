@@ -4,18 +4,21 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
+import com.karumi.dribbble.app.usecase.GetAllDribbbleShots
+import com.karumi.dribbble.app.usecase.DribbbleShot
 import com.pedrogomez.renderers.RVRendererAdapter
 import com.pedrogomez.renderers.RendererBuilder
 
-class MainActivity : AppCompatActivity() {
-
+class MainActivity : AppCompatActivity(), DribbbleShotListPresenter.View {
   private lateinit var adapter: RVRendererAdapter<ShotItem>
+  private lateinit var presenter: DribbbleShotListPresenter
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    title = "Dribbble"
     setContentView(R.layout.activity_main)
     configureRecyclerView()
+    presenter = DribbbleShotListPresenter(this, GetAllDribbbleShots())
+    presenter.onCreate()
   }
 
   private fun configureRecyclerView() {
@@ -25,8 +28,11 @@ class MainActivity : AppCompatActivity() {
 
     recyclerView.layoutManager = GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false)
     recyclerView.adapter = adapter
+  }
 
-    adapter.addAll((0..100).map { (ShotItem("", "", "Saguaro National Park", "Nick Slater")) })
+  override fun plusAssign(shots: List<DribbbleShot>) {
+    val items = shots.map { ShotItem(it.id, it.thumbnailUrl, it.name, it.authorName) }
+    adapter.addAll(items)
     adapter.notifyDataSetChanged()
   }
 }
