@@ -34,7 +34,7 @@ internal fun PhotosResponse.toDomain(): Photos =
     photos.photo.map { it.toDomain() }
 
 internal fun PhotoEntity.toDomain(): Photo = Photo(
-    photoUrl =  "$STATIC_FLICKR/$server/${id}_$secret.jpg",
+    photoUrl = "$STATIC_FLICKR/$server/${id}_$secret.jpg",
     title = title,
     author = ownername
 )
