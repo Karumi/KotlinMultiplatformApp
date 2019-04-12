@@ -10,7 +10,6 @@
 		3A49E3EC2142B66B001B54D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A49E3EB2142B66B001B54D3 /* Assets.xcassets */; };
 		3A49E3EF2142B66B001B54D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A49E3ED2142B66B001B54D3 /* LaunchScreen.storyboard */; };
 		3A49E3FD2142B704001B54D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49E3F92142B704001B54D3 /* AppDelegate.swift */; };
-		4955FCEC22454FA6009C1503 /* Dribbble_app_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4955FCEB22454FA6009C1503 /* Dribbble_app_Tests.swift */; };
 		88FD33E8D24904C599886630 /* Pods_Dribbble_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A06C98166AD5A5DBA39693 /* Pods_Dribbble_app.framework */; };
 		D7E79D2121A6267400FA676D /* shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7E79D1E21A6251F00FA676D /* shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -48,7 +47,6 @@
 		3A49E3F02142B66B001B54D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A49E3F92142B704001B54D3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4955FCE922454FA6009C1503 /* Dribbble app Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dribbble app Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4955FCEB22454FA6009C1503 /* Dribbble_app_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dribbble_app_Tests.swift; sourceTree = "<group>"; };
 		4955FCED22454FA6009C1503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56A06C98166AD5A5DBA39693 /* Pods_Dribbble_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dribbble_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E79D1E21A6251F00FA676D /* shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = shared.framework; path = "../shared/build/xcode-frameworks/shared.framework"; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 		4955FCEA22454FA6009C1503 /* Dribbble app Tests */ = {
 			isa = PBXGroup;
 			children = (
-				4955FCEB22454FA6009C1503 /* Dribbble_app_Tests.swift */,
 				4955FCED22454FA6009C1503 /* Info.plist */,
 			);
 			path = "Dribbble app Tests";
@@ -290,7 +287,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4955FCEC22454FA6009C1503 /* Dribbble_app_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
