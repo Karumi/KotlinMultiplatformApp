@@ -8,8 +8,20 @@
 
     <style name="Text" />
 
+    <style name="Text.List" />
+
     <style name="Text.Title">
         <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.List.DribbbleName">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.List.AuthorName">
+        <item name="android:textSize">10sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 </resources>
