@@ -2,6 +2,7 @@ package com.karumi.dribbble
 
 import com.karumi.dribbble.data.PhotosApiClient
 import kotlinx.coroutines.runBlocking
+import kotlinx.serialization.json.JsonParsingException
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -62,5 +63,14 @@ class PhotosApiClientTest : KtorClientMock() {
         apiClient.getPhotos()
 
         assertRequestContainsHeader("Authorization", "Client-ID $API_KEY")
+    }
+
+    @Test(expected = JsonParsingException::class)
+    fun `throw parse exception if body isn't list`() {
+        runBlocking {
+            enqueueMockResponse(200, "wrongBody.json")
+
+            apiClient.getPhotos()
+        }
     }
 }
