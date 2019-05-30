@@ -29,6 +29,15 @@ class PhotosApiClientTest : KtorClientMock() {
     }
 
     @Test
+    fun `get empty photo list when call get photos`() = runBlocking {
+        enqueueMockResponse(200, "getEmptyPhotosList.json")
+
+        val result = apiClient.getPhotos()
+
+        assertEquals(result.size, 0)
+    }
+
+    @Test
     fun `get 2 photos when call get photos`() = runBlocking {
         enqueueMockResponse(200, "getPhotosResponse.json")
 
