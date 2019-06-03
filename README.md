@@ -11,6 +11,13 @@ If you receive an error message reading "SDK location not found" while building 
 ndk.dir=/Users/<username>/Library/Android/sdk/ndk-bundle
 sdk.dir=/Users/<username>/Library/Android/sdk
 ```
+
+### Run tests locally
+
+- JVM shared code: ./gradlew :shared:jvmTest
+- IOS application: xcodebuild -workspace 'Dribbble app.xcworkspace' -scheme 'Dribbble app' -destination 'platform=iOS Simulator,name=iPhone 6s Plus' build test CODE_SIGN_IDENTITY=-
+
+
   
 License
 -------
