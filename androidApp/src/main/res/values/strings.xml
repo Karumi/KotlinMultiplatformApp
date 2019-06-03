@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Dribbble</string>
-    <string name="dribbbles_list_title">Dribbble</string>
-    <string name="dribbbles_list_shot_author">by %1s</string>
+  <string name="app_name">Dribbble</string>
+  <string name="dribbbles_list_title">Dribbble</string>
+  <string name="dribbbles_list_shot_author">by %1s</string>
 </resources>

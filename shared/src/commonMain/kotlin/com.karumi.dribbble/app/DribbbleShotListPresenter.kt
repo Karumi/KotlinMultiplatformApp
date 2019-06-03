@@ -1,7 +1,7 @@
 package com.karumi.dribbble.app
 
-import com.karumi.dribbble.app.usecase.GetAllDribbbleShots
 import com.karumi.dribbble.app.usecase.DribbbleShot
+import com.karumi.dribbble.app.usecase.GetAllDribbbleShots
 
 class DribbbleShotListPresenter(
   private val view: View,
