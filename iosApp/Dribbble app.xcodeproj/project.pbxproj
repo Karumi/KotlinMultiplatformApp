@@ -12,6 +12,10 @@
 		3A49E3FD2142B704001B54D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49E3F92142B704001B54D3 /* AppDelegate.swift */; };
 		4979FDC522607CD4008BF2C5 /* main.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4979FDC422607CD4008BF2C5 /* main.framework */; };
 		4979FDC622607CD4008BF2C5 /* main.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4979FDC422607CD4008BF2C5 /* main.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		49C9621C2260C5B80019AE60 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C9621B2260C5B80019AE60 /* ListViewController.swift */; };
+		49C9621E2260C5E20019AE60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C9621D2260C5E20019AE60 /* Main.storyboard */; };
+		49C962202260CB7D0019AE60 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49C9621F2260CB7D0019AE60 /* PhotoCollectionViewCell.xib */; };
+		49C962222260CCC80019AE60 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C962212260CCC80019AE60 /* PhotoCollectionViewCell.swift */; };
 		88FD33E8D24904C599886630 /* Pods_Dribbble_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A06C98166AD5A5DBA39693 /* Pods_Dribbble_app.framework */; };
 		E261899122A0310F004A5A42 /* DribbbleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E261899022A0310F004A5A42 /* DribbbleTests.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +55,10 @@
 		4955FCE922454FA6009C1503 /* Dribbble app Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dribbble app Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4955FCED22454FA6009C1503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4979FDC422607CD4008BF2C5 /* main.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = main.framework; path = "../shared/build/xcode-frameworks/main.framework"; sourceTree = "<group>"; };
+		49C9621B2260C5B80019AE60 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		49C9621D2260C5E20019AE60 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		49C9621F2260CB7D0019AE60 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		49C962212260CCC80019AE60 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		56A06C98166AD5A5DBA39693 /* Pods_Dribbble_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dribbble_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E79D1E21A6251F00FA676D /* shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = shared.framework; path = "../shared/build/xcode-frameworks/shared.framework"; sourceTree = "<group>"; };
 		E261899022A0310F004A5A42 /* DribbbleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleTests.swift; sourceTree = "<group>"; };
@@ -104,6 +112,10 @@
 				3A49E3EB2142B66B001B54D3 /* Assets.xcassets */,
 				3A49E3ED2142B66B001B54D3 /* LaunchScreen.storyboard */,
 				3A49E3F62142B704001B54D3 /* Sources */,
+				49C9621B2260C5B80019AE60 /* ListViewController.swift */,
+				49C9621D2260C5E20019AE60 /* Main.storyboard */,
+				49C9621F2260CB7D0019AE60 /* PhotoCollectionViewCell.xib */,
+				49C962212260CCC80019AE60 /* PhotoCollectionViewCell.swift */,
 			);
 			path = "Dribbble app";
 			sourceTree = "<group>";
@@ -229,6 +241,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49C9621E2260C5E20019AE60 /* Main.storyboard in Resources */,
+				49C962202260CB7D0019AE60 /* PhotoCollectionViewCell.xib in Resources */,
 				3A49E3EF2142B66B001B54D3 /* LaunchScreen.storyboard in Resources */,
 				3A49E3EC2142B66B001B54D3 /* Assets.xcassets in Resources */,
 			);
@@ -287,7 +301,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49C9621C2260C5B80019AE60 /* ListViewController.swift in Sources */,
 				3A49E3FD2142B704001B54D3 /* AppDelegate.swift in Sources */,
+				49C962222260CCC80019AE60 /* PhotoCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

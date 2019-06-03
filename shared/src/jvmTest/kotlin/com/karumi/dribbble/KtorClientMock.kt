@@ -35,8 +35,8 @@ open class KtorClientMock {
     }
 
     private fun getResponse(
-        status: Int,
-        fileName: String?
+      status: Int,
+      fileName: String?
     ): EnqueueResponse = {
         MockHttpResponse(
             it,

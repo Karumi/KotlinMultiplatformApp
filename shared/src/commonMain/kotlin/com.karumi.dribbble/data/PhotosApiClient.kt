@@ -14,8 +14,8 @@ import kotlinx.serialization.list
 
 // 5ba090b720d65a5d989be6955ad808eea4dae16abdc357f7f987ef9a9e48ccf1
 class PhotosApiClient(
-    engine: HttpClientEngine,
-    private val apiKey: String
+  engine: HttpClientEngine,
+  private val apiKey: String
 ) {
 
     companion object {

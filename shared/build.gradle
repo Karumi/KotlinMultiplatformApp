@@ -25,7 +25,7 @@ kotlin {
             compilations.main.outputKinds("framework")
         }
     }
-    
+
     sourceSets {
         commonMain {
             dependencies {
