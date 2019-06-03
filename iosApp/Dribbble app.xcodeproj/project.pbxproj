@@ -13,6 +13,7 @@
 		4979FDC522607CD4008BF2C5 /* main.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4979FDC422607CD4008BF2C5 /* main.framework */; };
 		4979FDC622607CD4008BF2C5 /* main.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4979FDC422607CD4008BF2C5 /* main.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		88FD33E8D24904C599886630 /* Pods_Dribbble_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A06C98166AD5A5DBA39693 /* Pods_Dribbble_app.framework */; };
+		E261899122A0310F004A5A42 /* DribbbleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E261899022A0310F004A5A42 /* DribbbleTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		4979FDC422607CD4008BF2C5 /* main.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = main.framework; path = "../shared/build/xcode-frameworks/main.framework"; sourceTree = "<group>"; };
 		56A06C98166AD5A5DBA39693 /* Pods_Dribbble_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dribbble_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E79D1E21A6251F00FA676D /* shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = shared.framework; path = "../shared/build/xcode-frameworks/shared.framework"; sourceTree = "<group>"; };
+		E261899022A0310F004A5A42 /* DribbbleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				4955FCED22454FA6009C1503 /* Info.plist */,
+				E261899022A0310F004A5A42 /* DribbbleTests.swift */,
 			);
 			path = "Dribbble app Tests";
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 					};
 					4955FCE822454FA6009C1503 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 3A49E3E02142B669001B54D3;
 					};
 				};
@@ -291,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E261899122A0310F004A5A42 /* DribbbleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +489,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BD48FG9BMV;
 				INFOPLIST_FILE = "Dribbble app Tests/Info.plist";
@@ -497,6 +503,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.karumi.Dribbble-app-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dribbble app.app/Dribbble app";
@@ -507,6 +514,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BD48FG9BMV;
 				INFOPLIST_FILE = "Dribbble app Tests/Info.plist";

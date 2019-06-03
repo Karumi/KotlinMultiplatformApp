@@ -29,6 +29,17 @@ android {
     sourceSets {
         getByName("main").java.srcDirs("src/main/kotlin")
     }
+
+    packagingOptions {
+        exclude("META-INF/LICENSE")
+        exclude("META-INF/ktor-http.kotlin_module")
+        exclude("META-INF/ktor-client-json.kotlin_module")
+        exclude("META-INF/ktor-client-core.kotlin_module")
+        exclude("META-INF/kotlinx-io.kotlin_module")
+        exclude("META-INF/atomicfu.kotlin_module")
+        exclude("META-INF/ktor-utils.kotlin_module")
+        exclude("META-INF/kotlinx-coroutines-io.kotlin_module")
+    }
 }
 
 dependencies {
