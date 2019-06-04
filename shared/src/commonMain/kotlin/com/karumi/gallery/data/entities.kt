@@ -1,7 +1,7 @@
-package com.karumi.dribbble.data
+package com.karumi.gallery.data
 
-import com.karumi.dribbble.model.Photo
-import com.karumi.dribbble.model.Photos
+import com.karumi.gallery.model.Photo
+import com.karumi.gallery.model.Photos
 import kotlinx.serialization.Serializable
 
 @Serializable

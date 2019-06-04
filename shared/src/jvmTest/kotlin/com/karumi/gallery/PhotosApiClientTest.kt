@@ -1,6 +1,6 @@
-package com.karumi.dribbble
+package com.karumi.gallery
 
-import com.karumi.dribbble.data.PhotosApiClient
+import com.karumi.gallery.data.PhotosApiClient
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.JsonParsingException
 import kotlin.test.BeforeTest

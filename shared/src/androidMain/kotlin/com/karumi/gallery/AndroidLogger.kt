@@ -1,4 +1,4 @@
-package com.karumi.dribbble
+package com.karumi.gallery
 
 import android.util.Log
 

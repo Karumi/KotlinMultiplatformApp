@@ -1,4 +1,4 @@
-package com.karumi.dribbble
+package com.karumi.gallery
 
 actual fun logError(tag: String, message: String) {
 }
