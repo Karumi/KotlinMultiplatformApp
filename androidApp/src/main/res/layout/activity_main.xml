@@ -22,11 +22,11 @@
       style="@style/Text.Title"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="@string/dribbbles_list_title"/>
+      android:text="@string/photos_list_title"/>
   </FrameLayout>
 
   <android.support.v7.widget.RecyclerView
-    android:id="@+id/dribbbleList"
+    android:id="@+id/photoList"
     android:layout_width="match_parent"
     android:layout_height="0dp"
     android:layout_marginStart="24dp"

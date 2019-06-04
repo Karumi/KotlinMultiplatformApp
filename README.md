@@ -1,6 +1,6 @@
 # ![Karumi logo][karumilogo] Kotlin multiplatform App
 
-Application example using Kotlin multiplatform getting information from Dribbble.
+Application example using Kotlin multiplatform getting information from [Unplash][unplash].
 
 ### Import project
 
@@ -38,3 +38,4 @@ License
 
 [karumilogo]: https://cloud.githubusercontent.com/assets/858090/11626547/e5a1dc66-9ce3-11e5-908d-537e07e82090.png
 [codemetric]: https://github.com/codecentric/spring-boot-admin
+[unplash]: https://unsplash.com/

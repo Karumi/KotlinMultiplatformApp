@@ -1,4 +1,4 @@
-package com.karumi.dribbble
+package com.karumi.gallery
 
 import java.util.logging.Level
 import java.util.logging.Logger

@@ -1,4 +1,4 @@
-package com.karumi.dribbble
+package com.karumi.gallery
 
 import io.ktor.client.call.HttpClientCall
 import io.ktor.client.engine.mock.MockEngine

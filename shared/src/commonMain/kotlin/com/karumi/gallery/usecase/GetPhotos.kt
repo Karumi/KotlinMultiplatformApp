@@ -1,7 +1,7 @@
-package com.karumi.dribbble.usecase
+package com.karumi.gallery.usecase
 
-import com.karumi.dribbble.data.PhotosApiClient
-import com.karumi.dribbble.model.Photos
+import com.karumi.gallery.data.PhotosApiClient
+import com.karumi.gallery.model.Photos
 
 class GetPhotos(private val photosApiClient: PhotosApiClient) {
     suspend operator fun invoke(): Photos = photosApiClient.getPhotos()

@@ -1,6 +1,6 @@
-package com.karumi.dribbble.data
+package com.karumi.gallery.data
 
-import com.karumi.dribbble.model.Photos
+import com.karumi.gallery.model.Photos
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.features.json.JsonFeature

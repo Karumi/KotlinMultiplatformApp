@@ -1,4 +1,4 @@
-package com.karumi.dribbble.model
+package com.karumi.gallery.model
 
 typealias Photos = List<Photo>
 

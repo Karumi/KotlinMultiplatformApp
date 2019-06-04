@@ -1,10 +1,9 @@
 import UIKit
 import main
 
-class ListViewController: UIViewController, DribbbleShotListPresenterView {
-
+class ListViewController: UIViewController, PhotoListPresenterView {
     private var items: Array<PhotoListItem> = Array()
-    private var presenter: DribbbleShotListPresenter!
+    private var presenter: PhotoListPresenter!
     @IBOutlet weak var titleView: UILabel!
     @IBOutlet weak var allItemsCollectionView: UICollectionView!
 
@@ -13,11 +12,11 @@ class ListViewController: UIViewController, DribbbleShotListPresenterView {
         allItemsCollectionView.dataSource = self
         allItemsCollectionView.delegate = self
         allItemsCollectionView.register(UINib(nibName: "PhotoCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "PhotoCollectionViewCellReuseIdentifier")
-        presenter = DribbbleShotListPresenter(view: self, getAllDribbbleShots: GetAllDribbbleShots())
+        presenter = PhotoListPresenter(view: self, getAllPhotos: GetAllPhotos())
         presenter.onCreate()
     }
 
-    func plusAssign(shots: [DribbbleShot]) {
+    func plusAssign(shots: [PhotoShot]) {
         let newItems = shots.map(PhotoListItem.init)
         items.append(contentsOf: newItems)
         allItemsCollectionView.reloadData()
@@ -52,7 +51,7 @@ struct PhotoListItem {
     let name: String
     let authorName: String
 
-    init(item: DribbbleShot) {
+    init(item: PhotoShot) {
         self.id = item.id
         self.thumbnailUrl = item.thumbnailUrl
         self.name = item.name

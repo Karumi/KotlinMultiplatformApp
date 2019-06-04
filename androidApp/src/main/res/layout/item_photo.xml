@@ -9,10 +9,10 @@
                                              android:layout_marginEnd="8dp">
 
   <FrameLayout
-    android:id="@+id/dribbbleImageContainer"
+    android:id="@+id/photoImageContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/background_dribbble_list_item"
+    android:background="@drawable/background_photo_list_item"
     android:elevation="2dp"
     app:layout_constraintTop_toTopOf="parent">
 
@@ -25,11 +25,11 @@
 
   <TextView
     android:id="@+id/shotName"
-    style="@style/Text.List.DribbbleName"
+    style="@style/Text.List.photoName"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
-    app:layout_constraintTop_toBottomOf="@id/dribbbleImageContainer"
+    app:layout_constraintTop_toBottomOf="@id/photoImageContainer"
     tools:text="Saguaro National Park"/>
 
   <TextView
