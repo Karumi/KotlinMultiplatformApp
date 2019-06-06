@@ -41,6 +41,15 @@ kotlin {
                 implementation "io.ktor:ktor-client-serialization:$ktor_version"
             }
         }
+        commonTest {
+            dependencies {
+                implementation "org.jetbrains.kotlin:kotlin-test-common:$kotlin_version"
+                implementation "org.jetbrains.kotlin:kotlin-test-annotations-common:$kotlin_version"
+
+                //implementation "io.ktor:ktor-client-mock-native:$ktor_version"
+                api "io.ktor:ktor-client-mock:$ktor_version"
+            }
+        }
         androidMain {
             dependencies {
                 implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -54,14 +63,16 @@ kotlin {
                 implementation "io.ktor:ktor-client-serialization-jvm:$ktor_version"
             }
         }
-        jvmTest {
-            dependsOn androidMain
+        androidTest {
             dependencies {
-                implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
-
-                implementation "commons-io:commons-io:2.6"
                 implementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+
                 implementation "io.ktor:ktor-client-mock-jvm:$ktor_version"
+
+                // TODO below dependencies can be removed after KT-29343 is fixed
+                implementation "io.ktor:ktor-client-core-jvm:$ktor_version"
+                implementation "io.ktor:ktor-client-json-jvm:$ktor_version"
+                implementation "io.ktor:ktor-client-serialization-jvm:$ktor_version"
             }
         }
         iosMain {
@@ -73,6 +84,13 @@ kotlin {
                 implementation "io.ktor:ktor-client-core-native:$ktor_version"
                 implementation "io.ktor:ktor-client-json-native:$ktor_version"
                 implementation "io.ktor:ktor-client-serialization-native:$ktor_version"
+            }
+        }
+        iosTest {
+            dependencies {
+                implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$serialization_version"
+
+                implementation "io.ktor:ktor-client-mock-native:$ktor_version"
             }
         }
     }
@@ -102,7 +120,7 @@ task kotlinConfiguration(type: Sync) {
     def kotlinConfig = new File(generatedSources, "KotlinConfig.kt")
     kotlinConfig.text =
             "package com.karumi.gallery.generated\nobject KotlinConfig {$propertiesVariables\n}"
-    
+
     println "Kotlin configuration done"
 }
 

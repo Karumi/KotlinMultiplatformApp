@@ -10,6 +10,7 @@ import com.karumi.gallery.usecase.GetPhotos
 import com.karumi.photo.app.R
 import com.pedrogomez.renderers.RVRendererAdapter
 import com.pedrogomez.renderers.RendererBuilder
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), PhotoListPresenter.View {
   private lateinit var adapter: RVRendererAdapter<PhotoItem>
@@ -18,6 +19,10 @@ class MainActivity : AppCompatActivity(), PhotoListPresenter.View {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
+    getSupportActionBar()?.setTitle("My custom toolbar!")
+    getSupportActionBar()?.setHomeButtonEnabled(true)
+    getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
+    setSupportActionBar(toolbar)
     configureRecyclerView()
     presenter = PhotoListPresenter(
       this,
