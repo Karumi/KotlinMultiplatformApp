@@ -1,5 +1,5 @@
 import UIKit
-import main
+import Shared
 
 class ListViewController: UIViewController, PhotoListPresenterView {
     private var items: Array<PhotoListItem> = Array()
@@ -12,7 +12,7 @@ class ListViewController: UIViewController, PhotoListPresenterView {
         allItemsCollectionView.dataSource = self
         allItemsCollectionView.delegate = self
         allItemsCollectionView.register(UINib(nibName: "PhotoCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "PhotoCollectionViewCellReuseIdentifier")
-        presenter = PhotoListPresenter(view: self, getAllPhotos: GetAllPhotos())
+        presenter = PhotoListPresenter(view: self, getAllPhotos: GetPhotos(photosApiClient: PhotosApiClientKt.getPhotosApiClient()))
         presenter.onCreate()
     }
 

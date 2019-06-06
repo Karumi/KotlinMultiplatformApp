@@ -1,6 +1,6 @@
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
-group 'com.example'
+group 'com.karumi'
 version '0.0.1'
 
 apply plugin: "kotlin-multiplatform"
@@ -16,54 +16,49 @@ android {
 }
 
 kotlin {
-    targets {
-        fromPreset(presets.jvm, "jvm")
-        fromPreset(presets.android, 'android')
-        fromPreset(presets.iosX64, "ios_x86_64")
-        fromPreset(presets.iosArm64, "ios_arm64")
-        configure([ios_x86_64, ios_arm64]) {
-            compilations.main.outputKinds("framework")
+    final def iosTarget = System.getenv('SDK_NAME')?.startsWith("iphoneos") ? presets.iosArm64 : presets.iosX64
+    targetFromPreset(iosTarget, "ios") {
+        binaries {
+            framework("Shared")
         }
     }
+    android()
 
     sourceSets {
+        all {
+            languageSettings {
+                useExperimentalAnnotation('kotlin.Experimental')
+            }
+        }
         commonMain {
             dependencies {
-                implementation 'org.jetbrains.kotlin:kotlin-stdlib'
+                implementation "org.jetbrains.kotlin:kotlin-stdlib-common:$kotlin_version"
                 implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutines_version"
                 implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serialization_version"
 
                 implementation "io.ktor:ktor-client-core:$ktor_version"
                 implementation "io.ktor:ktor-client-json:$ktor_version"
+                implementation "io.ktor:ktor-client-serialization:$ktor_version"
             }
         }
         androidMain {
             dependencies {
-                implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
                 implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+                implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+                implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+                implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$serialization_version"
 
+                implementation "io.ktor:ktor-client-android:$ktor_version"
                 implementation "io.ktor:ktor-client-core-jvm:$ktor_version"
                 implementation "io.ktor:ktor-client-json-jvm:$ktor_version"
-                implementation "io.ktor:ktor-client-okhttp:$ktor_version"
-
-                implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serialization_version"
-            }
-        }
-        jvmMain {
-            dependencies {
-                implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
-                implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-                
-                implementation "io.ktor:ktor-client-core-jvm:$ktor_version"
-                implementation "io.ktor:ktor-client-json-jvm:$ktor_version"
-                implementation "io.ktor:ktor-client-okhttp:$ktor_version"
-                
-                implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serialization_version"
+                implementation "io.ktor:ktor-client-serialization-jvm:$ktor_version"
             }
         }
         jvmTest {
-            dependsOn jvmMain
+            dependsOn androidMain
             dependencies {
+                implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+
                 implementation "commons-io:commons-io:2.6"
                 implementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
                 implementation "io.ktor:ktor-client-mock-jvm:$ktor_version"
@@ -77,10 +72,8 @@ kotlin {
                 implementation "io.ktor:ktor-client-ios:$ktor_version"
                 implementation "io.ktor:ktor-client-core-native:$ktor_version"
                 implementation "io.ktor:ktor-client-json-native:$ktor_version"
+                implementation "io.ktor:ktor-client-serialization-native:$ktor_version"
             }
-        }
-        configure([ios_x86_64Main, ios_arm64Main]) {
-            dependsOn iosMain
         }
     }
 }
@@ -89,19 +82,48 @@ configurations {
     compileClasspath
 }
 
-task packForXCode(type: Sync) {
-    final File frameworkDir = new File(buildDir, "xcode-frameworks")
+task kotlinConfiguration(type: Sync) {
+    println "Generating kotlin configuration"
 
-    final String configuration = project.findProperty("CONFIGURATION")?.toUpperCase() ?: "DEBUG"
-    final String arch = project.findProperty("ARCHS") ?: "x86_64"
+    def generatedSources = new File(buildDir, "generated/kotlin/config")
+    generatedSources.mkdirs()
+    kotlin.sourceSets.commonMain.kotlin.srcDirs += generatedSources
 
-    dependsOn kotlin.targets."ios_${arch}".compilations.main.linkTaskName("FRAMEWORK", configuration)
+    def localPropertiesFile = project.file("gradle.properties")
+    def localProperties = new Properties()
+    localProperties.load(new FileInputStream(localPropertiesFile))
 
-    from { kotlin.targets."ios_${arch}".compilations.main.getBinary("FRAMEWORK", configuration).parentFile }
-    into frameworkDir
+    def propertiesVariables = ""
+    for (entry in localProperties) {
+        def key = entry.key.toUpperCase()
+        propertiesVariables += "\n  val $key = $entry.value"
+    }
+
+    def kotlinConfig = new File(generatedSources, "KotlinConfig.kt")
+    kotlinConfig.text =
+            "package com.karumi.gallery.generated\nobject KotlinConfig {$propertiesVariables\n}"
+    
+    println "Kotlin configuration done"
 }
 
-tasks.build.dependsOn packForXCode
+tasks.build.dependsOn kotlinConfiguration
+
+task copyFramework {
+    final File frameworkDir = new File(buildDir, "xcode-frameworks")
+    def buildType = project.findProperty('kotlin.build.type') ?: 'DEBUG'
+    def framework = kotlin.targets.ios.compilations.main.target.binaries.findFramework("Shared", buildType)
+    dependsOn framework.linkTask
+
+    doLast {
+        def srcFile = framework.outputFile
+        copy {
+            from srcFile.parent
+            into frameworkDir
+            include 'Shared.framework/**'
+            include 'Shared.framework.dSYM'
+        }
+    }
+}
 
 ktlint {
     version = "0.30.0"

@@ -4,8 +4,9 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
-import com.karumi.gallery.app.usecase.GetAllPhotos
-import com.karumi.gallery.app.usecase.PhotoShot
+import com.karumi.gallery.data.getPhotosApiClient
+import com.karumi.gallery.model.PhotoShot
+import com.karumi.gallery.usecase.GetPhotos
 import com.karumi.photo.app.R
 import com.pedrogomez.renderers.RVRendererAdapter
 import com.pedrogomez.renderers.RendererBuilder
@@ -18,7 +19,10 @@ class MainActivity : AppCompatActivity(), PhotoListPresenter.View {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
     configureRecyclerView()
-    presenter = PhotoListPresenter(this, GetAllPhotos())
+    presenter = PhotoListPresenter(
+      this,
+      GetPhotos(getPhotosApiClient())
+    )
     presenter.onCreate()
   }
 

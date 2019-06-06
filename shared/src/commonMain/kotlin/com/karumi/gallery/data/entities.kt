@@ -1,6 +1,6 @@
 package com.karumi.gallery.data
 
-import com.karumi.gallery.model.Photo
+import com.karumi.gallery.model.PhotoShot
 import com.karumi.gallery.model.Photos
 import kotlinx.serialization.Serializable
 
@@ -32,8 +32,9 @@ data class UserEntity(
 internal fun List<PhotoEntity>.toDomain(): Photos =
     map { it.toDomain() }
 
-internal fun PhotoEntity.toDomain(): Photo = Photo(
-    photoUrl = urls.regular,
-    title = description ?: "",
-    author = user.name
+internal fun PhotoEntity.toDomain(): PhotoShot = PhotoShot(
+  id = id,
+  authorName = user.name,
+  name = description ?: "",
+  thumbnailUrl = urls.thumb
 )

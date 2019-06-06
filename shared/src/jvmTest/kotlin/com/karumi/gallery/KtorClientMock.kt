@@ -12,7 +12,9 @@ import kotlinx.coroutines.io.ByteReadChannel
 import kotlinx.io.charsets.Charsets
 import org.apache.commons.io.FileUtils
 import java.io.File
+import kotlin.jvm.javaClass
 import kotlin.test.assertEquals
+import kotlin.text.toByteArray
 
 typealias EnqueueResponse = (HttpClientCall) -> MockHttpResponse
 

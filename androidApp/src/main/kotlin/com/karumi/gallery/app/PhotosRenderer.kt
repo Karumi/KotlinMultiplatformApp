@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.karumi.photo.app.R
 import com.pedrogomez.renderers.Renderer
+import com.squareup.picasso.Picasso
 
 data class PhotoItem(
   val id: String,
@@ -32,6 +33,11 @@ class PhotosRenderer : Renderer<PhotoItem>() {
       R.string.photos_list_shot_author,
       content.authorName
     )
+    Picasso.get()
+      .load(content.thumbnailUrl)
+      .fit()
+      .centerCrop()
+      .into(shotImageView)
   }
 
   override fun setUpView(rootView: View?) {

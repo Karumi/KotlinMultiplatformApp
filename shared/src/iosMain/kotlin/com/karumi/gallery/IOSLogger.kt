@@ -1,15 +1,11 @@
 package com.karumi.gallery
 
+import platform.Foundation.NSLog
+
 actual fun logError(tag: String, message: String) {
+  NSLog("$tag: $message")
 }
 
 actual fun logInfo(tag: String, message: String) {
-}
-
-actual class Sample {
-  actual fun checkMe() = 7
-}
-
-actual object Platform {
-  actual val name: String = "iOS"
+  NSLog("$tag: $message")
 }

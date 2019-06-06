@@ -3,4 +3,5 @@ platform :ios, "11.4"
 target "Dribbble app" do
   use_frameworks!
   pod "SwiftLint"
+  pod "SDWebImage"
 end

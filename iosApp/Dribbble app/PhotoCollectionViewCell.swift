@@ -1,4 +1,5 @@
 import UIKit
+import SDWebImage
 
 class PhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageBackView: UIView!
@@ -15,5 +16,6 @@ class PhotoCollectionViewCell: UICollectionViewCell {
 
         name.text = item.name
         authorName.text = item.authorName
+        imageView.sd_setImage(with: URL(string: item.thumbnailUrl), completed: nil)
     }
 }

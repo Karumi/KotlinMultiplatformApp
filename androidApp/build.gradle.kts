@@ -34,14 +34,7 @@ android {
     getByName("main").java.srcDirs("src/main/kotlin")
   }
   packagingOptions {
-    exclude("META-INF/LICENSE")
-    exclude("META-INF/ktor-http.kotlin_module")
-    exclude("META-INF/ktor-client-json.kotlin_module")
-    exclude("META-INF/ktor-client-core.kotlin_module")
-    exclude("META-INF/kotlinx-io.kotlin_module")
-    exclude("META-INF/atomicfu.kotlin_module")
-    exclude("META-INF/ktor-utils.kotlin_module")
-    exclude("META-INF/kotlinx-coroutines-io.kotlin_module")
+    exclude("META-INF/*")
   }
 }
 
@@ -52,6 +45,8 @@ dependencies {
   implementation("com.android.support:recyclerview-v7:28.0.0")
   implementation("com.android.support:recyclerview-v7:28.0.0")
   implementation("com.github.pedrovgs:renderers:3.4.0")
+  implementation("com.squareup.okhttp3:okhttp:3.11.0")
+  implementation("com.squareup.picasso:picasso:2.71828")
   implementation(kotlin("stdlib-jdk7", KotlinCompilerVersion.VERSION))
   implementation(project(":shared"))
 }
