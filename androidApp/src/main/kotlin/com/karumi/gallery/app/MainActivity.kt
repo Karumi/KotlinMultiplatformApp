@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity(), PhotoListPresenter.View {
   }
 
   override fun plusAssign(shots: List<PhotoShot>) {
-    val items = shots.map { PhotoItem(it.id, it.thumbnailUrl, it.name, it.authorName) }
+    val items = shots.map { PhotoItem(it.id, it.thumbnailUrl, it.authorName) }
     adapter.addAll(items)
     adapter.notifyDataSetChanged()
   }

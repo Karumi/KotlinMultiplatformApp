@@ -25,7 +25,7 @@ class ListViewController: UIViewController, PhotoListPresenterView {
 
 extension ListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width / 2 - 32, height: 180)
+        return CGSize(width: collectionView.bounds.width / 2 - 20, height: 180)
     }
 }
 
@@ -48,13 +48,11 @@ extension ListViewController: UICollectionViewDataSource {
 struct PhotoListItem {
     let id: String
     let thumbnailUrl: String
-    let name: String
     let authorName: String
 
     init(item: PhotoShot) {
         self.id = item.id
         self.thumbnailUrl = item.thumbnailUrl
-        self.name = item.name
         self.authorName = item.authorName
     }
 }

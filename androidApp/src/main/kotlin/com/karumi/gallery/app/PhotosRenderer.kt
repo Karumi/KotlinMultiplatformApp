@@ -12,14 +12,12 @@ import com.squareup.picasso.Picasso
 data class PhotoItem(
   val id: String,
   val thumbnailUrl: String,
-  val name: String,
   val authorName: String
 )
 
 class PhotosRenderer : Renderer<PhotoItem>() {
 
   private lateinit var shotImageView: ImageView
-  private lateinit var shotNameView: TextView
   private lateinit var shotAuthorNameView: TextView
 
   override fun inflate(inflater: LayoutInflater?, parent: ViewGroup?): View =
@@ -28,7 +26,6 @@ class PhotosRenderer : Renderer<PhotoItem>() {
   override fun hookListeners(rootView: View?) {}
 
   override fun render() {
-    shotNameView.text = content.name
     shotAuthorNameView.text = context.getString(
       R.string.photos_list_shot_author,
       content.authorName
@@ -43,7 +40,6 @@ class PhotosRenderer : Renderer<PhotoItem>() {
   override fun setUpView(rootView: View?) {
     rootView ?: return
     shotImageView = rootView.findViewById(R.id.shotImage)
-    shotNameView = rootView.findViewById(R.id.shotName)
     shotAuthorNameView = rootView.findViewById(R.id.shotAuthorName)
   }
 }
