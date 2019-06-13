@@ -45,6 +45,10 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="MH1-zl-wrW">
+                                    <rect key="frame" x="0.0" y="0.0" width="327" height="579"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Hhn-b9-1Jp">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -56,6 +60,13 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qql-ib-y7D">
+                                <rect key="frame" x="139" y="362" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -71,6 +82,8 @@
                     </view>
                     <connections>
                         <outlet property="allItemsCollectionView" destination="PpR-AB-5zP" id="t1O-vT-v6X"/>
+                        <outlet property="errorText" destination="Qql-ib-y7D" id="HUu-86-Jwg"/>
+                        <outlet property="loadingIndicator" destination="MH1-zl-wrW" id="c3X-iq-dkH"/>
                         <outlet property="titleView" destination="Lb4-vv-Nbb" id="wvf-R7-QLv"/>
                     </connections>
                 </viewController>

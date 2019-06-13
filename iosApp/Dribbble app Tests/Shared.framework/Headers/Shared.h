@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
 
-@class SharedPhotoShot, SharedPhotoListPresenter, SharedGetPhotos, SharedPhotosApiClient, SharedPhotosApiClientCompanion, SharedPhotoEntity, SharedPhotoUrlsEntity, SharedUserEntity, SharedPhotoEntityCompanion, SharedPhotoEntity$serializer, SharedKotlinArray, SharedPhotoUrlsEntityCompanion, SharedPhotoUrlsEntity$serializer, SharedUserEntityCompanion, SharedUserEntity$serializer, SharedKotlinConfig, SharedKtor_client_coreHttpClient, SharedKtor_client_coreHttpClientEngineConfig, SharedKotlinx_coroutines_coreCoroutineDispatcher, SharedKotlinx_serialization_runtime_nativeEnumDescriptor, SharedKotlinx_serialization_runtime_nativeSerialKind, SharedKotlinNothing, SharedKotlinx_serialization_runtime_nativeUpdateMode, SharedKotlinThrowable, SharedKotlinx_coroutines_coreCancellationException, SharedKotlinUnit, SharedKtor_client_coreHttpClientConfig, SharedKtor_client_coreHttpReceivePipeline, SharedKtor_client_coreHttpRequestPipeline, SharedKtor_client_coreHttpResponsePipeline, SharedKtor_client_coreHttpSendPipeline, SharedKtor_client_coreHttpResponseConfig, SharedKotlinAbstractCoroutineContextElement, SharedKotlinx_serialization_runtime_nativeSerialClassDescImpl, SharedKotlinEnum, SharedKotlinIllegalStateException, SharedKotlinRuntimeException, SharedKotlinException, SharedKtor_utilsAttributeKey, SharedKtor_utilsPipeline, SharedKtor_utilsPipelinePhase, SharedKotlinx_ioCharset, SharedKotlinx_coroutines_coreAtomicDesc, SharedKotlinx_ioCharsetDecoder, SharedKotlinx_ioCharsetEncoder, SharedKotlinx_coroutines_coreAtomicOp, SharedKotlinx_coroutines_coreOpDescriptor;
+@class SharedPhotoShot, SharedGalleryInjector, SharedInjectionModule, SharedPhotosApiClient, SharedGetPhotos, SharedPhotoListPresenter, SharedPhotoListPresenterCompanion, SharedPhotosApiClientCompanion, SharedPhotoEntity, SharedPhotoUrlsEntity, SharedUserEntity, SharedPhotoEntityCompanion, SharedPhotoEntity$serializer, SharedKotlinArray, SharedPhotoUrlsEntityCompanion, SharedPhotoUrlsEntity$serializer, SharedAvatarUrlsEntity, SharedAvatarUrlsEntityCompanion, SharedAvatarUrlsEntity$serializer, SharedUserEntityCompanion, SharedUserEntity$serializer, SharedKotlinConfig, SharedKtor_client_coreHttpClient, SharedKtor_client_coreHttpClientEngineConfig, SharedKotlinx_coroutines_coreCoroutineDispatcher, SharedKotlinx_serialization_runtime_nativeEnumDescriptor, SharedKotlinx_serialization_runtime_nativeSerialKind, SharedKotlinNothing, SharedKotlinx_serialization_runtime_nativeUpdateMode, SharedKotlinThrowable, SharedKotlinx_coroutines_coreCancellationException, SharedKotlinUnit, SharedKtor_client_coreHttpClientConfig, SharedKtor_client_coreHttpReceivePipeline, SharedKtor_client_coreHttpRequestPipeline, SharedKtor_client_coreHttpResponsePipeline, SharedKtor_client_coreHttpSendPipeline, SharedKtor_client_coreHttpResponseConfig, SharedKotlinAbstractCoroutineContextElement, SharedKotlinx_serialization_runtime_nativeSerialClassDescImpl, SharedKotlinEnum, SharedKotlinIllegalStateException, SharedKotlinRuntimeException, SharedKotlinException, SharedKtor_utilsAttributeKey, SharedKtor_utilsPipeline, SharedKtor_utilsPipelinePhase, SharedKotlinx_ioCharset, SharedKotlinx_coroutines_coreAtomicDesc, SharedKotlinx_ioCharsetDecoder, SharedKotlinx_ioCharsetEncoder, SharedKotlinx_coroutines_coreAtomicOp, SharedKotlinx_coroutines_coreOpDescriptor;
 
-@protocol SharedPhotoListPresenterView, SharedKtor_client_coreHttpClientEngine, SharedKotlinx_serialization_runtime_nativeKSerializer, SharedKotlinx_serialization_runtime_nativeGeneratedSerializer, SharedKotlinx_serialization_runtime_nativeSerializationStrategy, SharedKotlinx_serialization_runtime_nativeEncoder, SharedKotlinx_serialization_runtime_nativeSerialDescriptor, SharedKotlinx_serialization_runtime_nativeDeserializationStrategy, SharedKotlinx_serialization_runtime_nativeDecoder, SharedKotlinx_coroutines_coreJob, SharedKotlinSuspendFunction1, SharedKotlinx_coroutines_coreCoroutineScope, SharedKotlinCoroutineContext, SharedKotlinx_ioCloseable, SharedKotlinIterator, SharedKotlinx_serialization_runtime_nativeCompositeEncoder, SharedKotlinx_serialization_runtime_nativeSerialModule, SharedKotlinAnnotation, SharedKotlinx_serialization_runtime_nativeCompositeDecoder, SharedKotlinx_coroutines_coreChildHandle, SharedKotlinx_coroutines_coreChildJob, SharedKotlinx_coroutines_coreDisposableHandle, SharedKotlinSequence, SharedKotlinx_coroutines_coreSelectClause0, SharedKotlinCoroutineContextElement, SharedKotlinCoroutineContextKey, SharedKotlinSuspendFunction, SharedKtor_utilsAttributes, SharedKotlinContinuationInterceptor, SharedKotlinContinuation, SharedKotlinx_coroutines_coreRunnable, SharedKotlinx_serialization_runtime_nativeSerialModuleCollector, SharedKotlinKClass, SharedKotlinComparable, SharedKotlinx_coroutines_coreParentJob, SharedKotlinx_coroutines_coreSelectInstance, SharedKotlinSuspendFunction0, SharedKtor_client_coreHttpClientFeature, SharedKotlinSuspendFunction2, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier;
+@protocol SharedPhotoListPresenterView, SharedKtor_client_coreHttpClientEngine, SharedKotlinx_serialization_runtime_nativeKSerializer, SharedKotlinx_serialization_runtime_nativeGeneratedSerializer, SharedKotlinx_serialization_runtime_nativeSerializationStrategy, SharedKotlinx_serialization_runtime_nativeEncoder, SharedKotlinx_serialization_runtime_nativeSerialDescriptor, SharedKotlinx_serialization_runtime_nativeDeserializationStrategy, SharedKotlinx_serialization_runtime_nativeDecoder, SharedKotlinx_coroutines_coreJob, SharedKotlinSuspendFunction1, SharedKotlinCoroutineContext, SharedKotlinx_coroutines_coreCoroutineScope, SharedKotlinx_ioCloseable, SharedKotlinIterator, SharedKotlinx_serialization_runtime_nativeCompositeEncoder, SharedKotlinx_serialization_runtime_nativeSerialModule, SharedKotlinAnnotation, SharedKotlinx_serialization_runtime_nativeCompositeDecoder, SharedKotlinx_coroutines_coreChildHandle, SharedKotlinx_coroutines_coreChildJob, SharedKotlinx_coroutines_coreDisposableHandle, SharedKotlinSequence, SharedKotlinx_coroutines_coreSelectClause0, SharedKotlinCoroutineContextElement, SharedKotlinCoroutineContextKey, SharedKotlinSuspendFunction, SharedKtor_utilsAttributes, SharedKotlinContinuationInterceptor, SharedKotlinContinuation, SharedKotlinx_coroutines_coreRunnable, SharedKotlinx_serialization_runtime_nativeSerialModuleCollector, SharedKotlinKClass, SharedKotlinComparable, SharedKotlinx_coroutines_coreParentJob, SharedKotlinx_coroutines_coreSelectInstance, SharedKotlinSuspendFunction0, SharedKtor_client_coreHttpClientFeature, SharedKotlinSuspendFunction2, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -144,16 +144,34 @@ __attribute__((swift_name("KotlinBoolean")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PhotoShot")))
 @interface SharedPhotoShot : KotlinBase
-- (instancetype)initWithId:(NSString *)id name:(NSString *)name thumbnailUrl:(NSString *)thumbnailUrl authorName:(NSString *)authorName __attribute__((swift_name("init(id:name:thumbnailUrl:authorName:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithId:(NSString *)id thumbnailUrl:(NSString *)thumbnailUrl authorName:(NSString *)authorName __attribute__((swift_name("init(id:thumbnailUrl:authorName:)"))) __attribute__((objc_designated_initializer));
 - (NSString *)component1 __attribute__((swift_name("component1()")));
 - (NSString *)component2 __attribute__((swift_name("component2()")));
 - (NSString *)component3 __attribute__((swift_name("component3()")));
-- (NSString *)component4 __attribute__((swift_name("component4()")));
-- (SharedPhotoShot *)doCopyId:(NSString *)id name:(NSString *)name thumbnailUrl:(NSString *)thumbnailUrl authorName:(NSString *)authorName __attribute__((swift_name("doCopy(id:name:thumbnailUrl:authorName:)")));
+- (SharedPhotoShot *)doCopyId:(NSString *)id thumbnailUrl:(NSString *)thumbnailUrl authorName:(NSString *)authorName __attribute__((swift_name("doCopy(id:thumbnailUrl:authorName:)")));
 @property (readonly) NSString *id __attribute__((swift_name("id")));
-@property (readonly) NSString *name __attribute__((swift_name("name")));
 @property (readonly) NSString *thumbnailUrl __attribute__((swift_name("thumbnailUrl")));
 @property (readonly) NSString *authorName __attribute__((swift_name("authorName")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("GalleryInjector")))
+@interface SharedGalleryInjector : KotlinBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)galleryInjector __attribute__((swift_name("init()")));
+- (SharedInjectionModule *)invoke __attribute__((swift_name("invoke()")));
+- (void)addNewInjector:(SharedInjectionModule *)injector __attribute__((swift_name("addNew(injector:)")));
+- (void)configInjector:(SharedInjectionModule *)injector __attribute__((swift_name("config(injector:)")));
+@property (readonly) SharedInjectionModule *use __attribute__((swift_name("use")));
+@end;
+
+__attribute__((swift_name("InjectionModule")))
+@interface SharedInjectionModule : KotlinBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+@property (readonly) SharedPhotosApiClient *getPhotosApiClient __attribute__((swift_name("getPhotosApiClient")));
+@property (readonly) SharedGetPhotos *getPhotos __attribute__((swift_name("getPhotos")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -163,13 +181,23 @@ __attribute__((swift_name("PhotoListPresenter")))
 - (void)onCreate __attribute__((swift_name("onCreate()")));
 @end;
 
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("PhotoListPresenter.Companion")))
+@interface SharedPhotoListPresenterCompanion : KotlinBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@end;
+
 __attribute__((swift_name("PhotoListPresenterView")))
 @protocol SharedPhotoListPresenterView
 @required
 - (void)plusAssignShots:(NSArray<SharedPhotoShot *> *)shots __attribute__((swift_name("plusAssign(shots:)")));
+- (void)showLoader __attribute__((swift_name("showLoader()")));
+- (void)hideLoader __attribute__((swift_name("hideLoader()")));
+- (void)onLoadError __attribute__((swift_name("onLoadError()")));
 @end;
 
-__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PhotosApiClient")))
 @interface SharedPhotosApiClient : KotlinBase
 - (instancetype)initWithEngine:(id<SharedKtor_client_coreHttpClientEngine>)engine apiKey:(NSString *)apiKey __attribute__((swift_name("init(engine:apiKey:)"))) __attribute__((objc_designated_initializer));
@@ -186,14 +214,16 @@ __attribute__((swift_name("PhotosApiClient.Companion")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PhotoEntity")))
 @interface SharedPhotoEntity : KotlinBase
-- (instancetype)initWithId:(NSString *)id created_at:(NSString *)created_at urls:(SharedPhotoUrlsEntity *)urls description:(NSString * _Nullable)description user:(SharedUserEntity *)user __attribute__((swift_name("init(id:created_at:urls:description:user:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithId:(NSString *)id color:(NSString *)color created_at:(NSString *)created_at urls:(SharedPhotoUrlsEntity *)urls description:(NSString * _Nullable)description user:(SharedUserEntity *)user __attribute__((swift_name("init(id:color:created_at:urls:description:user:)"))) __attribute__((objc_designated_initializer));
 - (NSString *)component1 __attribute__((swift_name("component1()")));
 - (NSString *)component2 __attribute__((swift_name("component2()")));
-- (SharedPhotoUrlsEntity *)component3 __attribute__((swift_name("component3()")));
-- (NSString * _Nullable)component4 __attribute__((swift_name("component4()")));
-- (SharedUserEntity *)component5 __attribute__((swift_name("component5()")));
-- (SharedPhotoEntity *)doCopyId:(NSString *)id created_at:(NSString *)created_at urls:(SharedPhotoUrlsEntity *)urls description:(NSString * _Nullable)description user:(SharedUserEntity *)user __attribute__((swift_name("doCopy(id:created_at:urls:description:user:)")));
+- (NSString *)component3 __attribute__((swift_name("component3()")));
+- (SharedPhotoUrlsEntity *)component4 __attribute__((swift_name("component4()")));
+- (NSString * _Nullable)component5 __attribute__((swift_name("component5()")));
+- (SharedUserEntity *)component6 __attribute__((swift_name("component6()")));
+- (SharedPhotoEntity *)doCopyId:(NSString *)id color:(NSString *)color created_at:(NSString *)created_at urls:(SharedPhotoUrlsEntity *)urls description:(NSString * _Nullable)description user:(SharedUserEntity *)user __attribute__((swift_name("doCopy(id:color:created_at:urls:description:user:)")));
 @property (readonly) NSString *id __attribute__((swift_name("id")));
+@property (readonly) NSString *color __attribute__((swift_name("color")));
 @property (readonly) NSString *created_at __attribute__((swift_name("created_at")));
 @property (readonly) SharedPhotoUrlsEntity *urls __attribute__((swift_name("urls")));
 @property (readonly, getter=description_) NSString * _Nullable description __attribute__((swift_name("description")));
@@ -284,16 +314,53 @@ __attribute__((swift_name("PhotoUrlsEntity.$serializer")))
 @end;
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("UserEntity")))
-@interface SharedUserEntity : KotlinBase
-- (instancetype)initWithId:(NSString *)id name:(NSString *)name username:(NSString *)username __attribute__((swift_name("init(id:name:username:)"))) __attribute__((objc_designated_initializer));
+__attribute__((swift_name("AvatarUrlsEntity")))
+@interface SharedAvatarUrlsEntity : KotlinBase
+- (instancetype)initWithLarge:(NSString *)large medium:(NSString *)medium small:(NSString *)small __attribute__((swift_name("init(large:medium:small:)"))) __attribute__((objc_designated_initializer));
 - (NSString *)component1 __attribute__((swift_name("component1()")));
 - (NSString *)component2 __attribute__((swift_name("component2()")));
 - (NSString *)component3 __attribute__((swift_name("component3()")));
-- (SharedUserEntity *)doCopyId:(NSString *)id name:(NSString *)name username:(NSString *)username __attribute__((swift_name("doCopy(id:name:username:)")));
+- (SharedAvatarUrlsEntity *)doCopyLarge:(NSString *)large medium:(NSString *)medium small:(NSString *)small __attribute__((swift_name("doCopy(large:medium:small:)")));
+@property (readonly) NSString *large __attribute__((swift_name("large")));
+@property (readonly) NSString *medium __attribute__((swift_name("medium")));
+@property (readonly) NSString *small __attribute__((swift_name("small")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("AvatarUrlsEntity.Companion")))
+@interface SharedAvatarUrlsEntityCompanion : KotlinBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+- (id<SharedKotlinx_serialization_runtime_nativeKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("AvatarUrlsEntity.$serializer")))
+@interface SharedAvatarUrlsEntity$serializer : KotlinBase <SharedKotlinx_serialization_runtime_nativeGeneratedSerializer>
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)$serializer __attribute__((swift_name("init()")));
+- (SharedAvatarUrlsEntity *)deserializeDecoder:(id<SharedKotlinx_serialization_runtime_nativeDecoder>)decoder __attribute__((swift_name("deserialize(decoder:)")));
+- (SharedAvatarUrlsEntity *)patchDecoder:(id<SharedKotlinx_serialization_runtime_nativeDecoder>)decoder old:(SharedAvatarUrlsEntity *)old __attribute__((swift_name("patch(decoder:old:)")));
+- (void)serializeEncoder:(id<SharedKotlinx_serialization_runtime_nativeEncoder>)encoder obj:(SharedAvatarUrlsEntity *)obj __attribute__((swift_name("serialize(encoder:obj:)")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("UserEntity")))
+@interface SharedUserEntity : KotlinBase
+- (instancetype)initWithId:(NSString *)id name:(NSString *)name username:(NSString *)username bio:(NSString * _Nullable)bio profileImage:(SharedAvatarUrlsEntity *)profileImage __attribute__((swift_name("init(id:name:username:bio:profileImage:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)component1 __attribute__((swift_name("component1()")));
+- (NSString *)component2 __attribute__((swift_name("component2()")));
+- (NSString *)component3 __attribute__((swift_name("component3()")));
+- (NSString * _Nullable)component4 __attribute__((swift_name("component4()")));
+- (SharedAvatarUrlsEntity *)component5 __attribute__((swift_name("component5()")));
+- (SharedUserEntity *)doCopyId:(NSString *)id name:(NSString *)name username:(NSString *)username bio:(NSString * _Nullable)bio profileImage:(SharedAvatarUrlsEntity *)profileImage __attribute__((swift_name("doCopy(id:name:username:bio:profileImage:)")));
 @property (readonly) NSString *id __attribute__((swift_name("id")));
 @property (readonly) NSString *name __attribute__((swift_name("name")));
 @property (readonly) NSString *username __attribute__((swift_name("username")));
+@property (readonly) NSString * _Nullable bio __attribute__((swift_name("bio")));
+@property (readonly) SharedAvatarUrlsEntity *profileImage __attribute__((swift_name("profileImage")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -343,12 +410,7 @@ __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("IosAsyncKt")))
 @interface SharedIosAsyncKt : KotlinBase
 + (id<SharedKotlinx_coroutines_coreJob>)launchInMainBlock:(id<SharedKotlinSuspendFunction1>)block __attribute__((swift_name("launchInMain(block:)")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("PhotosApiClientKt")))
-@interface SharedPhotosApiClientKt : KotlinBase
-+ (SharedPhotosApiClient *)getPhotosApiClient __attribute__((swift_name("getPhotosApiClient()")));
++ (id _Nullable)runBlockingContext:(id<SharedKotlinCoroutineContext>)context block:(id<SharedKotlinSuspendFunction1>)block __attribute__((swift_name("runBlocking(context:block:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))

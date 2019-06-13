@@ -2,18 +2,22 @@ import UIKit
 import Shared
 
 class ListViewController: UIViewController, PhotoListPresenterView {
+    
     private var items: Array<PhotoListItem> = Array()
     private var presenter: PhotoListPresenter!
     @IBOutlet weak var titleView: UILabel!
     @IBOutlet weak var allItemsCollectionView: UICollectionView!
-
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var errorText: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         allItemsCollectionView.dataSource = self
         allItemsCollectionView.delegate = self
         allItemsCollectionView.register(UINib(nibName: "PhotoCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "PhotoCollectionViewCellReuseIdentifier")
-        presenter = PhotoListPresenter(view: self, getAllPhotos: GetPhotos(photosApiClient: PhotosApiClientKt.getPhotosApiClient()))
+        presenter = PhotoListPresenter(view: self, getAllPhotos: GalleryInjector().use.getPhotos)
         presenter.onCreate()
+        errorText.isHidden = true
     }
 
     func plusAssign(shots: [PhotoShot]) {
@@ -21,11 +25,26 @@ class ListViewController: UIViewController, PhotoListPresenterView {
         items.append(contentsOf: newItems)
         allItemsCollectionView.reloadData()
     }
+    
+    func showLoader() {
+        loadingIndicator.startAnimating()
+    }
+    
+    func hideLoader() {
+        loadingIndicator.stopAnimating()
+        loadingIndicator.isHidden = true
+    }
+    
+    func onLoadError() {
+        errorText.isHidden = false
+        errorText.text = "Oops something went wrong!"
+        NSLog("LOL ERROR")
+    }
 }
 
 extension ListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width / 2 - 20, height: 180)
+        return CGSize(width: collectionView.bounds.width / 2 - 15, height: 180)
     }
 }
 

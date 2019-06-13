@@ -1,5 +1,6 @@
 package com.karumi.gallery.app
 
+import com.karumi.gallery.logError
 import com.karumi.gallery.logInfo
 import com.karumi.gallery.model.PhotoShot
 import com.karumi.gallery.usecase.GetPhotos
@@ -17,15 +18,27 @@ class PhotoListPresenter(
   private var getPhotosJob: Job? = null
 
   fun onCreate() {
-    getPhotosJob = launchInMain {
-      logInfo(TAG, "Start getting photos")
-      val allShots = getAllPhotos()
-      view += allShots
-      logInfo(TAG, "${allShots.size} photos received")
+    view.showLoader()
+    try {
+      getPhotosJob = launchInMain {
+        logInfo(TAG, "Start getting photos")
+
+        val allShots = getAllPhotos()
+        view += allShots
+        logInfo(TAG, "${allShots.size} photos received")
+      }
+    } catch (ex: Exception) {
+      logError(TAG, "Load photos error: ${ex.message}")
+      view.onLoadError()
+    } finally {
+      view.hideLoader()
     }
   }
 
   interface View {
     operator fun plusAssign(shots: List<PhotoShot>)
+    fun showLoader()
+    fun hideLoader()
+    fun onLoadError()
   }
 }

@@ -13,6 +13,9 @@ android {
     defaultConfig {
         compileSdkVersion 28
     }
+    packagingOptions {
+        exclude "META-INF/*"
+    }
 }
 
 kotlin {

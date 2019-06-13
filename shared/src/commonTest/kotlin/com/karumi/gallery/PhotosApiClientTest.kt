@@ -25,7 +25,7 @@ class PhotosApiClientTest : KtorClientMock() {
   }
 
   @Test
-  fun `sends get photos request to the correct path`() = runBlocking {
+  fun sends_get_photos_request_to_the_correct_path() = runBlocking {
     enqueueMockResponse(200, getPhotosResponse)
 
     apiClient.getPhotos()
@@ -34,7 +34,7 @@ class PhotosApiClientTest : KtorClientMock() {
   }
 
   @Test
-  fun `get empty photo list when call get photos`() = runBlocking {
+  fun get_empty_photo_list_when_call_get_photos() = runBlocking {
     enqueueMockResponse(200, getEmptyPhotosList)
 
     val result = apiClient.getPhotos()
@@ -43,7 +43,7 @@ class PhotosApiClientTest : KtorClientMock() {
   }
 
   @Test
-  fun `get 2 photos when call get photos`() = runBlocking {
+  fun get_2_photos_when_call_get_photos() = runBlocking {
     enqueueMockResponse(200, getPhotosResponse)
 
     val result = apiClient.getPhotos()
@@ -52,7 +52,7 @@ class PhotosApiClientTest : KtorClientMock() {
   }
 
   @Test
-  fun `send twenty per_page parameter`() = runBlocking {
+  fun send_twenty_per_page_parameter() = runBlocking {
     enqueueMockResponse(200, getPhotosResponse)
 
     apiClient.getPhotos()
@@ -61,7 +61,7 @@ class PhotosApiClientTest : KtorClientMock() {
   }
 
   @Test
-  fun `send authorization header`() = runBlocking {
+  fun send_authorization_header() = runBlocking {
     enqueueMockResponse(200, getPhotosResponse)
 
     apiClient.getPhotos()
@@ -70,7 +70,7 @@ class PhotosApiClientTest : KtorClientMock() {
   }
 
   @Test
-  fun `throw parse exception if body isn't list`() {
+  fun throw_parse_exception_if_body_is_not_list() {
     assertFailsWith(JsonParsingException::class) {
       runBlocking {
         enqueueMockResponse(200, getInvalidBody)

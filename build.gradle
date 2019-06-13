@@ -19,6 +19,7 @@ allprojects {
     repositories {
         jcenter()
         google()
+        maven { url 'https://jitpack.io' }
         maven { url "https://kotlin.bintray.com/kotlinx" }
         maven { url "https://dl.bintray.com/kodein-framework/Kodein-DI" }
         maven { url "https://dl.bintray.com/touchlabpublic/kotlin" }

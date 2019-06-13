@@ -10,13 +10,12 @@ import io.ktor.client.request.get
 import io.ktor.client.request.header
 import io.ktor.client.request.parameter
 import io.ktor.http.HttpHeaders
+import kotlinx.serialization.UnstableDefault
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
 import kotlinx.serialization.list
 
-fun getPhotosApiClient(): PhotosApiClient = PhotosApiClient(getEngine(), KotlinConfig.UNPLASH_KEY)
-
-class PhotosApiClient(
+open class PhotosApiClient(
   engine: HttpClientEngine,
   private val apiKey: String
 ) {
@@ -39,7 +38,8 @@ class PhotosApiClient(
     }
   }
 
-  suspend fun getPhotos(): Photos = client.get<String>("$PHOTOS_API/$PATH") {
+  @UseExperimental(UnstableDefault::class)
+  open suspend fun getPhotos(): Photos = client.get<String>("$PHOTOS_API/$PATH") {
     header(HttpHeaders.Authorization, "$CLIENT_ID $apiKey")
     parameter(PER_PAGE_PARAMETER, VALUES_PER_PAGE)
   }.let {
