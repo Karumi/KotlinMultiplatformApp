@@ -28,12 +28,14 @@ open class PhotosApiClient(
     private const val VALUES_PER_PAGE = "20"
   }
 
-  private val client: HttpClient = HttpClient(engine) {
-    install(JsonFeature) {
-      serializer = KotlinxSerializer().apply {
-        setMapper(UserEntity::class, UserEntity.serializer())
-        setMapper(PhotoUrlsEntity::class, PhotoUrlsEntity.serializer())
-        setMapper(PhotoEntity::class, PhotoEntity.serializer())
+  private val client: HttpClient by lazy {
+    HttpClient(engine) {
+      install(JsonFeature) {
+        serializer = KotlinxSerializer().apply {
+          setMapper(UserEntity::class, UserEntity.serializer())
+          setMapper(PhotoUrlsEntity::class, PhotoUrlsEntity.serializer())
+          setMapper(PhotoEntity::class, PhotoEntity.serializer())
+        }
       }
     }
   }

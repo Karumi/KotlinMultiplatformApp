@@ -80,7 +80,7 @@ class MainActivityTest {
       onBlocking { getPhotos() } doThrow NullPointerException()
     }
 
-    GalleryInjector.config(MockPhotoList(apiClient))
+    GalleryInjector.config(PhotoListStub(apiClient))
   }
 
   private fun givenPhotos(number: Int = 10) =
@@ -96,15 +96,16 @@ class MainActivityTest {
         onBlocking { getPhotos() } doReturn photos
       }
 
-      GalleryInjector.config(MockPhotoList(apiClient))
+      GalleryInjector.config(PhotoListStub(apiClient))
     }
 
   private fun startActivity() {
     activityRule.launchActivity(null)
   }
 
-  inner class MockPhotoList(private val apiClient: PhotosApiClient) : InjectionModule() {
+  inner class PhotoListStub(private val apiClient: PhotosApiClient) : InjectionModule() {
     override val getPhotosApiClient: PhotosApiClient
       get() = apiClient
   }
+
 }

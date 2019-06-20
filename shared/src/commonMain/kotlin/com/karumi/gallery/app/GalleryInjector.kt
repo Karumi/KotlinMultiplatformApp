@@ -7,9 +7,10 @@ import com.karumi.gallery.usecase.GetPhotos
 
 object GalleryInjector {
   private var galleryInjector: InjectionModule? = null
+  private val defaultInjector = InjectionModule()
 
   operator fun invoke(): InjectionModule =
-    galleryInjector ?: InjectionModule()
+    galleryInjector ?: defaultInjector
 
   val use: InjectionModule
     get() = invoke()
@@ -21,11 +22,9 @@ object GalleryInjector {
 
 open class InjectionModule {
 
-  open val getPhotosApiClient: PhotosApiClient by lazy {
+  open var getPhotosApiClient: PhotosApiClient =
     PhotosApiClient(getEngine(), KotlinConfig.UNPLASH_KEY)
-  }
 
-  open val getPhotos: GetPhotos by lazy {
+  open var getPhotos: GetPhotos =
     GetPhotos(getPhotosApiClient)
-  }
 }

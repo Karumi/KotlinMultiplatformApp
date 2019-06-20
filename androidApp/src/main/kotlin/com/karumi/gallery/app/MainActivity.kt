@@ -28,6 +28,11 @@ class MainActivity : AppCompatActivity(), PhotoListPresenter.View {
     presenter.onCreate()
   }
 
+  override fun onDestroy() {
+    super.onDestroy()
+    presenter.detachView()
+  }
+
   override fun showLoader() {
     progress.visibility = View.VISIBLE
   }

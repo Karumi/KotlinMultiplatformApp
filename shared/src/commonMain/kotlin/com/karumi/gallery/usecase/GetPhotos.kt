@@ -5,4 +5,6 @@ import com.karumi.gallery.model.Photos
 
 class GetPhotos(private val photosApiClient: PhotosApiClient) {
   suspend operator fun invoke(): Photos = photosApiClient.getPhotos()
+  suspend fun hola(): String = "lol"
+  fun adios(): String = "lol"
 }

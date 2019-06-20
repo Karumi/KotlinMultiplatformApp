@@ -1,7 +1,7 @@
 import UIKit
 import Shared
 
-class ListViewController: UIViewController, PhotoListPresenterView {
+class PhotoListViewController: UIViewController, PhotoListPresenterView {
     
     private var items: Array<PhotoListItem> = Array()
     private var presenter: PhotoListPresenter!
@@ -37,18 +37,17 @@ class ListViewController: UIViewController, PhotoListPresenterView {
     
     func onLoadError() {
         errorText.isHidden = false
-        errorText.text = "Oops something went wrong!"
-        NSLog("LOL ERROR")
+        errorText.text = "Oops something went wrong!"        
     }
 }
 
-extension ListViewController: UICollectionViewDelegateFlowLayout {
+extension PhotoListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.width / 2 - 15, height: 180)
     }
 }
 
-extension ListViewController: UICollectionViewDataSource {
+extension PhotoListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
     }

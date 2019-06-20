@@ -35,6 +35,10 @@ class PhotoListPresenter(
     }
   }
 
+  fun detachView() {
+    getPhotosJob?.cancel()
+  }
+
   interface View {
     operator fun plusAssign(shots: List<PhotoShot>)
     fun showLoader()
