@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19D0C9B79C0359ED3BF89C8E /* Pods_Dribbble_app_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC88DA274F35CC1828F7300F /* Pods_Dribbble_app_Tests.framework */; };
 		3A49E3EC2142B66B001B54D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A49E3EB2142B66B001B54D3 /* Assets.xcassets */; };
 		3A49E3EF2142B66B001B54D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A49E3ED2142B66B001B54D3 /* LaunchScreen.storyboard */; };
 		3A49E3FD2142B704001B54D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49E3F92142B704001B54D3 /* AppDelegate.swift */; };
@@ -17,13 +18,12 @@
 		E24A64DF22B2B19300F1B63F /* KIFTestActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24A64DE22B2B19300F1B63F /* KIFTestActor.swift */; };
 		E24A64E122B2B1A800F1B63F /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24A64E022B2B1A800F1B63F /* XCTestCase.swift */; };
 		E261899122A0310F004A5A42 /* AcceptanceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E261899022A0310F004A5A42 /* AcceptanceTestCase.swift */; };
-		E2A5488B22B3F33E00335752 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2BF3A8922B26A770068AF5C /* Shared.framework */; };
-		E2A5488D22B3F35A00335752 /* Shared.framework in Embedded frameworks */ = {isa = PBXBuildFile; fileRef = E2A5488C22B3F35900335752 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E2B7112722B3D88C00168BDC /* GalleryStoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7112622B3D88C00168BDC /* GalleryStoryBoard.swift */; };
 		E2BF3A8B22B26A770068AF5C /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E2BF3A8922B26A770068AF5C /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E2BF3A8C22B26B450068AF5C /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2BF3A8922B26A770068AF5C /* Shared.framework */; };
 		E2BF3A9022B2A1300068AF5C /* PhotoListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BF3A8F22B2A1300068AF5C /* PhotoListViewControllerTest.swift */; };
-		FF96E86DE89451C1399A335B /* Pods_Dribbble_app_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B324F9369842CE50A35A7F /* Pods_Dribbble_app_Tests.framework */; };
+		E2ECEC1422BBCC86004017D4 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2BF3A8922B26A770068AF5C /* Shared.framework */; };
+		F99A15D21F64444F20FD80D2 /* Pods_Dribbble_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 160905382E2F1F08FDC1473A /* Pods_Dribbble_app.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E2A5488D22B3F35A00335752 /* Shared.framework in Embedded frameworks */,
 			);
 			name = "Embedded frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		11FB9C164B3DAC134CF811D6 /* Pods-Dribbble app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dribbble app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dribbble app/Pods-Dribbble app.debug.xcconfig"; sourceTree = "<group>"; };
+		160905382E2F1F08FDC1473A /* Pods_Dribbble_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dribbble_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35D195DE1A95A1B72514C252 /* Pods-Dribbble app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dribbble app.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dribbble app/Pods-Dribbble app.release.xcconfig"; sourceTree = "<group>"; };
 		3A49E3E12142B66A001B54D3 /* Dribbble app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dribbble app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A49E3EB2142B66B001B54D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,12 +77,10 @@
 		49C962212260CCC80019AE60 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		707D4EFA5C57626093CE38B0 /* Pods-Dribbble app Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dribbble app Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dribbble app Tests/Pods-Dribbble app Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		7ACAC6E7ECBBC7F97A10FBAA /* Pods-Dribbble app Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dribbble app Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dribbble app Tests/Pods-Dribbble app Tests.release.xcconfig"; sourceTree = "<group>"; };
-		B8B324F9369842CE50A35A7F /* Pods_Dribbble_app_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dribbble_app_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC88DA274F35CC1828F7300F /* Pods_Dribbble_app_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dribbble_app_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24A64DE22B2B19300F1B63F /* KIFTestActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KIFTestActor.swift; sourceTree = "<group>"; };
 		E24A64E022B2B1A800F1B63F /* XCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
-		E24A64E322B2B68300F1B63F /* Pods_Dribbble_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Dribbble_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E261899022A0310F004A5A42 /* AcceptanceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptanceTestCase.swift; sourceTree = "<group>"; };
-		E2A5488C22B3F35900335752 /* Shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Shared.framework; path = "../shared/build/xcode-frameworks/Shared.framework"; sourceTree = "<group>"; };
 		E2B7112622B3D88C00168BDC /* GalleryStoryBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryStoryBoard.swift; sourceTree = "<group>"; };
 		E2BF3A8922B26A770068AF5C /* Shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Shared.framework; path = "../shared/build/xcode-frameworks/Shared.framework"; sourceTree = "<group>"; };
 		E2BF3A8F22B2A1300068AF5C /* PhotoListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewControllerTest.swift; sourceTree = "<group>"; };
@@ -94,6 +92,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2BF3A8C22B26B450068AF5C /* Shared.framework in Frameworks */,
+				F99A15D21F64444F20FD80D2 /* Pods_Dribbble_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,8 +100,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2A5488B22B3F33E00335752 /* Shared.framework in Frameworks */,
-				FF96E86DE89451C1399A335B /* Pods_Dribbble_app_Tests.framework in Frameworks */,
+				E2ECEC1422BBCC86004017D4 /* Shared.framework in Frameworks */,
+				19D0C9B79C0359ED3BF89C8E /* Pods_Dribbble_app_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +111,6 @@
 		3A49E3D82142B669001B54D3 = {
 			isa = PBXGroup;
 			children = (
-				E2A5488C22B3F35900335752 /* Shared.framework */,
 				4955FCEA22454FA6009C1503 /* Dribbble app Tests */,
 				E152E41AFF5D5F3CBF156415 /* Frameworks */,
 				3A49E3E32142B66A001B54D3 /* Dribbble app */,
@@ -180,8 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				E2BF3A8922B26A770068AF5C /* Shared.framework */,
-				E24A64E322B2B68300F1B63F /* Pods_Dribbble_app.framework */,
-				B8B324F9369842CE50A35A7F /* Pods_Dribbble_app_Tests.framework */,
+				160905382E2F1F08FDC1473A /* Pods_Dribbble_app.framework */,
+				AC88DA274F35CC1828F7300F /* Pods_Dribbble_app_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -642,7 +640,8 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks/Shared.framework",
 					"@executable_path/../Frameworks",
-					$SRCROOT/Frameworks,
+					"\"$(PLATFORM_DIR)/Developer/Library/Frameworks\"",
+					$SRCROOT,
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -670,7 +669,8 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks/Shared.framework",
 					"@executable_path/../Frameworks",
-					$SRCROOT/Frameworks,
+					"\"$(PLATFORM_DIR)/Developer/Library/Frameworks\"",
+					$SRCROOT,
 				);
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.karumi.Dribbble-app-Tests";

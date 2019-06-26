@@ -2,8 +2,8 @@ import Foundation
 import UIKit
 import KIF
 import Nimble
-import Shared
 @testable import Dribbble_app
+import Shared
 
 class PhotoListViewControllerTests: AcceptanceTestCase {
     

@@ -12,7 +12,7 @@ class PhotoListPresenter(
 ) {
 
   companion object {
-    private val TAG = PhotoListPresenter::class.simpleName!!
+    private const val TAG = "PhotoListPresenter"
   }
 
   private var getPhotosJob: Job? = null

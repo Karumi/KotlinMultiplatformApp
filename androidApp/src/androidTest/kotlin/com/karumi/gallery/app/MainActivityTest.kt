@@ -104,8 +104,6 @@ class MainActivityTest {
   }
 
   inner class PhotoListStub(private val apiClient: PhotosApiClient) : InjectionModule() {
-    override val getPhotosApiClient: PhotosApiClient
-      get() = apiClient
+    override var getPhotosApiClient: PhotosApiClient = apiClient
   }
-
 }
