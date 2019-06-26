@@ -21,10 +21,9 @@ object GalleryInjector {
 }
 
 open class InjectionModule {
-
-  open var getPhotosApiClient: PhotosApiClient =
+  open fun getPhotosApiClient(): PhotosApiClient =
     PhotosApiClient(getEngine(), KotlinConfig.UNPLASH_KEY)
 
-  open var getPhotos: GetPhotos =
-    GetPhotos(getPhotosApiClient)
+  open fun getPhotos(): GetPhotos =
+    GetPhotos(getPhotosApiClient())
 }
