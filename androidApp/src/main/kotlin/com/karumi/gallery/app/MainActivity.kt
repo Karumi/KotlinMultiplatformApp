@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity(), PhotoListPresenter.View {
     configureRecyclerView()
     presenter = PhotoListPresenter(
       this,
-      GalleryInjector().getPhotos
+      GalleryInjector().getPhotos()
     )
     presenter.onCreate()
   }
