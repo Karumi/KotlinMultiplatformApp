@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		19D0C9B79C0359ED3BF89C8E /* Pods_Dribbble_app_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC88DA274F35CC1828F7300F /* Pods_Dribbble_app_Tests.framework */; };
+		0EEBC159AF6692E265073FAC /* Pods_PhotoGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48AC4CB8F5178B4B928A9C7D /* Pods_PhotoGallery.framework */; };
+		2E99C732F566AB4387DC329A /* Pods_PhotoGallery_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 855E9AD6192FB0FB31ECFB29 /* Pods_PhotoGallery_Tests.framework */; };
 		3A49E3EC2142B66B001B54D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A49E3EB2142B66B001B54D3 /* Assets.xcassets */; };
 		3A49E3EF2142B66B001B54D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A49E3ED2142B66B001B54D3 /* LaunchScreen.storyboard */; };
 		3A49E3FD2142B704001B54D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49E3F92142B704001B54D3 /* AppDelegate.swift */; };
@@ -23,7 +24,6 @@
 		E2BF3A8C22B26B450068AF5C /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2BF3A8922B26A770068AF5C /* Shared.framework */; };
 		E2BF3A9022B2A1300068AF5C /* PhotoListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BF3A8F22B2A1300068AF5C /* PhotoListViewControllerTest.swift */; };
 		E2ECEC1422BBCC86004017D4 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2BF3A8922B26A770068AF5C /* Shared.framework */; };
-		F99A15D21F64444F20FD80D2 /* Pods_Dribbble_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 160905382E2F1F08FDC1473A /* Pods_Dribbble_app.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,22 +62,26 @@
 
 /* Begin PBXFileReference section */
 		11FB9C164B3DAC134CF811D6 /* Pods-Dribbble app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dribbble app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dribbble app/Pods-Dribbble app.debug.xcconfig"; sourceTree = "<group>"; };
-		160905382E2F1F08FDC1473A /* Pods_Dribbble_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dribbble_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35D195DE1A95A1B72514C252 /* Pods-Dribbble app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dribbble app.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dribbble app/Pods-Dribbble app.release.xcconfig"; sourceTree = "<group>"; };
-		3A49E3E12142B66A001B54D3 /* Dribbble app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dribbble app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A49E3E12142B66A001B54D3 /* PhotoGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A49E3EB2142B66B001B54D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A49E3EE2142B66B001B54D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A49E3F02142B66B001B54D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A49E3F92142B704001B54D3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4955FCE922454FA6009C1503 /* Dribbble app Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dribbble app Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		465E6B149C6C0D06BE1F1688 /* Pods-PhotoGallery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoGallery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoGallery/Pods-PhotoGallery.debug.xcconfig"; sourceTree = "<group>"; };
+		48AC4CB8F5178B4B928A9C7D /* Pods_PhotoGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4955FCE922454FA6009C1503 /* PhotoGallery Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PhotoGallery Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4955FCED22454FA6009C1503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49C9621B2260C5B80019AE60 /* PhotoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewController.swift; sourceTree = "<group>"; };
 		49C9621D2260C5E20019AE60 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		49C9621F2260CB7D0019AE60 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		49C962212260CCC80019AE60 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		505672482828C1055FB0B481 /* Pods-PhotoGallery Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoGallery Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoGallery Tests/Pods-PhotoGallery Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		5CB43440595B9E3163D01E02 /* Pods-PhotoGallery Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoGallery Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoGallery Tests/Pods-PhotoGallery Tests.release.xcconfig"; sourceTree = "<group>"; };
 		707D4EFA5C57626093CE38B0 /* Pods-Dribbble app Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dribbble app Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dribbble app Tests/Pods-Dribbble app Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		7ACAC6E7ECBBC7F97A10FBAA /* Pods-Dribbble app Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dribbble app Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dribbble app Tests/Pods-Dribbble app Tests.release.xcconfig"; sourceTree = "<group>"; };
-		AC88DA274F35CC1828F7300F /* Pods_Dribbble_app_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dribbble_app_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		855E9AD6192FB0FB31ECFB29 /* Pods_PhotoGallery_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoGallery_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		991FD5BC9CFFBE8AE2484E2E /* Pods-PhotoGallery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoGallery.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoGallery/Pods-PhotoGallery.release.xcconfig"; sourceTree = "<group>"; };
 		E24A64DE22B2B19300F1B63F /* KIFTestActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KIFTestActor.swift; sourceTree = "<group>"; };
 		E24A64E022B2B1A800F1B63F /* XCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
 		E261899022A0310F004A5A42 /* AcceptanceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptanceTestCase.swift; sourceTree = "<group>"; };
@@ -92,7 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2BF3A8C22B26B450068AF5C /* Shared.framework in Frameworks */,
-				F99A15D21F64444F20FD80D2 /* Pods_Dribbble_app.framework in Frameworks */,
+				0EEBC159AF6692E265073FAC /* Pods_PhotoGallery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +105,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2ECEC1422BBCC86004017D4 /* Shared.framework in Frameworks */,
-				19D0C9B79C0359ED3BF89C8E /* Pods_Dribbble_app_Tests.framework in Frameworks */,
+				2E99C732F566AB4387DC329A /* Pods_PhotoGallery_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,9 +115,9 @@
 		3A49E3D82142B669001B54D3 = {
 			isa = PBXGroup;
 			children = (
-				4955FCEA22454FA6009C1503 /* Dribbble app Tests */,
+				4955FCEA22454FA6009C1503 /* PhotoGallery Tests */,
 				E152E41AFF5D5F3CBF156415 /* Frameworks */,
-				3A49E3E32142B66A001B54D3 /* Dribbble app */,
+				3A49E3E32142B66A001B54D3 /* PhotoGallery */,
 				CCAFA9EA45D3D8BA7109D77A /* Pods */,
 				3A49E3E22142B66A001B54D3 /* Products */,
 			);
@@ -122,13 +126,13 @@
 		3A49E3E22142B66A001B54D3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3A49E3E12142B66A001B54D3 /* Dribbble app.app */,
-				4955FCE922454FA6009C1503 /* Dribbble app Tests.xctest */,
+				3A49E3E12142B66A001B54D3 /* PhotoGallery.app */,
+				4955FCE922454FA6009C1503 /* PhotoGallery Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3A49E3E32142B66A001B54D3 /* Dribbble app */ = {
+		3A49E3E32142B66A001B54D3 /* PhotoGallery */ = {
 			isa = PBXGroup;
 			children = (
 				3A49E3F02142B66B001B54D3 /* Info.plist */,
@@ -141,7 +145,7 @@
 				49C962212260CCC80019AE60 /* PhotoCollectionViewCell.swift */,
 				E2B7112622B3D88C00168BDC /* GalleryStoryBoard.swift */,
 			);
-			path = "Dribbble app";
+			path = PhotoGallery;
 			sourceTree = "<group>";
 		};
 		3A49E3F62142B704001B54D3 /* Sources */ = {
@@ -152,7 +156,7 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		4955FCEA22454FA6009C1503 /* Dribbble app Tests */ = {
+		4955FCEA22454FA6009C1503 /* PhotoGallery Tests */ = {
 			isa = PBXGroup;
 			children = (
 				E24A64DD22B2B17100F1B63F /* Extensions */,
@@ -160,7 +164,7 @@
 				4955FCED22454FA6009C1503 /* Info.plist */,
 				E261899022A0310F004A5A42 /* AcceptanceTestCase.swift */,
 			);
-			path = "Dribbble app Tests";
+			path = "PhotoGallery Tests";
 			sourceTree = "<group>";
 		};
 		CCAFA9EA45D3D8BA7109D77A /* Pods */ = {
@@ -170,6 +174,10 @@
 				35D195DE1A95A1B72514C252 /* Pods-Dribbble app.release.xcconfig */,
 				707D4EFA5C57626093CE38B0 /* Pods-Dribbble app Tests.debug.xcconfig */,
 				7ACAC6E7ECBBC7F97A10FBAA /* Pods-Dribbble app Tests.release.xcconfig */,
+				465E6B149C6C0D06BE1F1688 /* Pods-PhotoGallery.debug.xcconfig */,
+				991FD5BC9CFFBE8AE2484E2E /* Pods-PhotoGallery.release.xcconfig */,
+				505672482828C1055FB0B481 /* Pods-PhotoGallery Tests.debug.xcconfig */,
+				5CB43440595B9E3163D01E02 /* Pods-PhotoGallery Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -178,8 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				E2BF3A8922B26A770068AF5C /* Shared.framework */,
-				160905382E2F1F08FDC1473A /* Pods_Dribbble_app.framework */,
-				AC88DA274F35CC1828F7300F /* Pods_Dribbble_app_Tests.framework */,
+				48AC4CB8F5178B4B928A9C7D /* Pods_PhotoGallery.framework */,
+				855E9AD6192FB0FB31ECFB29 /* Pods_PhotoGallery_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -204,9 +212,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3A49E3E02142B669001B54D3 /* Dribbble app */ = {
+		3A49E3E02142B669001B54D3 /* PhotoGallery */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A49E3F32142B66B001B54D3 /* Build configuration list for PBXNativeTarget "Dribbble app" */;
+			buildConfigurationList = 3A49E3F32142B66B001B54D3 /* Build configuration list for PBXNativeTarget "PhotoGallery" */;
 			buildPhases = (
 				37CE8789727B6AA15430DEED /* [CP] Check Pods Manifest.lock */,
 				D7E79D1D21A6185100FA676D /* Kotlin Build */,
@@ -220,14 +228,14 @@
 			);
 			dependencies = (
 			);
-			name = "Dribbble app";
+			name = PhotoGallery;
 			productName = "github-multiplatform-example";
-			productReference = 3A49E3E12142B66A001B54D3 /* Dribbble app.app */;
+			productReference = 3A49E3E12142B66A001B54D3 /* PhotoGallery.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4955FCE822454FA6009C1503 /* Dribbble app Tests */ = {
+		4955FCE822454FA6009C1503 /* PhotoGallery Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4955FCF222454FA6009C1503 /* Build configuration list for PBXNativeTarget "Dribbble app Tests" */;
+			buildConfigurationList = 4955FCF222454FA6009C1503 /* Build configuration list for PBXNativeTarget "PhotoGallery Tests" */;
 			buildPhases = (
 				DEA88DD361BF64010BEF3ECE /* [CP] Check Pods Manifest.lock */,
 				4955FCE522454FA6009C1503 /* Sources */,
@@ -241,9 +249,9 @@
 			dependencies = (
 				4955FCEF22454FA6009C1503 /* PBXTargetDependency */,
 			);
-			name = "Dribbble app Tests";
+			name = "PhotoGallery Tests";
 			productName = "Dribbble app Tests";
-			productReference = 4955FCE922454FA6009C1503 /* Dribbble app Tests.xctest */;
+			productReference = 4955FCE922454FA6009C1503 /* PhotoGallery Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -267,7 +275,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3A49E3DC2142B669001B54D3 /* Build configuration list for PBXProject "Dribbble app" */;
+			buildConfigurationList = 3A49E3DC2142B669001B54D3 /* Build configuration list for PBXProject "PhotoGallery" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -280,8 +288,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3A49E3E02142B669001B54D3 /* Dribbble app */,
-				4955FCE822454FA6009C1503 /* Dribbble app Tests */,
+				3A49E3E02142B669001B54D3 /* PhotoGallery */,
+				4955FCE822454FA6009C1503 /* PhotoGallery Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -319,7 +327,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Dribbble app-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-PhotoGallery-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -334,7 +342,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Dribbble app/Pods-Dribbble app-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoGallery/Pods-PhotoGallery-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -345,7 +353,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dribbble app/Pods-Dribbble app-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhotoGallery/Pods-PhotoGallery-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9ED3C22472069EE06BD4A845 /* [CP] Embed Pods Frameworks */ = {
@@ -356,7 +364,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Dribbble app Tests/Pods-Dribbble app Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoGallery Tests/Pods-PhotoGallery Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/KIF/KIF.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 			);
@@ -369,7 +377,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dribbble app Tests/Pods-Dribbble app Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhotoGallery Tests/Pods-PhotoGallery Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D7E79D1D21A6185100FA676D /* Kotlin Build */ = {
@@ -405,7 +413,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Dribbble app Tests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-PhotoGallery Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -442,7 +450,7 @@
 /* Begin PBXTargetDependency section */
 		4955FCEF22454FA6009C1503 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3A49E3E02142B669001B54D3 /* Dribbble app */;
+			target = 3A49E3E02142B669001B54D3 /* PhotoGallery */;
 			targetProxy = 4955FCEE22454FA6009C1503 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -575,7 +583,7 @@
 		};
 		3A49E3F42142B66B001B54D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 11FB9C164B3DAC134CF811D6 /* Pods-Dribbble app.debug.xcconfig */;
+			baseConfigurationReference = 465E6B149C6C0D06BE1F1688 /* Pods-PhotoGallery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -585,14 +593,14 @@
 					"$(inherited)",
 					"$SRCROOT/../shared/build/xcode-frameworks",
 					$SRCROOT/Frameworks,
-					"$(PROJECT_DIR)/Dribbble\\ app\\ Tests",
+					"$(PROJECT_DIR)/PhotoGallery\\ Tests",
 				);
-				INFOPLIST_FILE = "Dribbble app/Info.plist";
+				INFOPLIST_FILE = PhotoGallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = karumi.com.dribbble;
+				PRODUCT_BUNDLE_IDENTIFIER = karumi.com.photogallery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -601,7 +609,7 @@
 		};
 		3A49E3F52142B66B001B54D3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 35D195DE1A95A1B72514C252 /* Pods-Dribbble app.release.xcconfig */;
+			baseConfigurationReference = 991FD5BC9CFFBE8AE2484E2E /* Pods-PhotoGallery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -611,14 +619,14 @@
 					"$(inherited)",
 					"($SRCROOT)/../shared/build/xcode-frameworks",
 					"($SRCROOT)/Frameworks",
-					"$(PROJECT_DIR)/Dribbble\\ app\\ Tests",
+					"$(PROJECT_DIR)/PhotoGallery\\ Tests",
 				);
-				INFOPLIST_FILE = "Dribbble app/Info.plist";
+				INFOPLIST_FILE = PhotoGallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = karumi.com.dribbble;
+				PRODUCT_BUNDLE_IDENTIFIER = karumi.com.photogallery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -627,13 +635,13 @@
 		};
 		4955FCF022454FA6009C1503 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 707D4EFA5C57626093CE38B0 /* Pods-Dribbble app Tests.debug.xcconfig */;
+			baseConfigurationReference = 505672482828C1055FB0B481 /* Pods-PhotoGallery Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BD48FG9BMV;
-				INFOPLIST_FILE = "Dribbble app Tests/Info.plist";
+				INFOPLIST_FILE = "PhotoGallery Tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -650,19 +658,19 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dribbble app.app/Dribbble app";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoGallery.app/PhotoGallery";
 			};
 			name = Debug;
 		};
 		4955FCF122454FA6009C1503 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7ACAC6E7ECBBC7F97A10FBAA /* Pods-Dribbble app Tests.release.xcconfig */;
+			baseConfigurationReference = 5CB43440595B9E3163D01E02 /* Pods-PhotoGallery Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BD48FG9BMV;
-				INFOPLIST_FILE = "Dribbble app Tests/Info.plist";
+				INFOPLIST_FILE = "PhotoGallery Tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -677,14 +685,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dribbble app.app/Dribbble app";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoGallery.app/PhotoGallery";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3A49E3DC2142B669001B54D3 /* Build configuration list for PBXProject "Dribbble app" */ = {
+		3A49E3DC2142B669001B54D3 /* Build configuration list for PBXProject "PhotoGallery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A49E3F12142B66B001B54D3 /* Debug */,
@@ -693,7 +701,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		3A49E3F32142B66B001B54D3 /* Build configuration list for PBXNativeTarget "Dribbble app" */ = {
+		3A49E3F32142B66B001B54D3 /* Build configuration list for PBXNativeTarget "PhotoGallery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A49E3F42142B66B001B54D3 /* Debug */,
@@ -702,7 +710,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		4955FCF222454FA6009C1503 /* Build configuration list for PBXNativeTarget "Dribbble app Tests" */ = {
+		4955FCF222454FA6009C1503 /* Build configuration list for PBXNativeTarget "PhotoGallery Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4955FCF022454FA6009C1503 /* Debug */,

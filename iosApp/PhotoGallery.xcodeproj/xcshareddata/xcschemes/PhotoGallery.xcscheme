@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A49E3E02142B669001B54D3"
-               BuildableName = "Dribbble app.app"
-               BlueprintName = "Dribbble app"
-               ReferencedContainer = "container:Dribbble app.xcodeproj">
+               BuildableName = "PhotoGallery.app"
+               BlueprintName = "PhotoGallery"
+               ReferencedContainer = "container:PhotoGallery.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4955FCE822454FA6009C1503"
-               BuildableName = "Dribbble app Tests.xctest"
-               BlueprintName = "Dribbble app Tests"
-               ReferencedContainer = "container:Dribbble app.xcodeproj">
+               BuildableName = "PhotoGallery Tests.xctest"
+               BlueprintName = "PhotoGallery Tests"
+               ReferencedContainer = "container:PhotoGallery.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A49E3E02142B669001B54D3"
-            BuildableName = "Dribbble app.app"
-            BlueprintName = "Dribbble app"
-            ReferencedContainer = "container:Dribbble app.xcodeproj">
+            BuildableName = "PhotoGallery.app"
+            BlueprintName = "PhotoGallery"
+            ReferencedContainer = "container:PhotoGallery.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A49E3E02142B669001B54D3"
-            BuildableName = "Dribbble app.app"
-            BlueprintName = "Dribbble app"
-            ReferencedContainer = "container:Dribbble app.xcodeproj">
+            BuildableName = "PhotoGallery.app"
+            BlueprintName = "PhotoGallery"
+            ReferencedContainer = "container:PhotoGallery.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A49E3E02142B669001B54D3"
-            BuildableName = "Dribbble app.app"
-            BlueprintName = "Dribbble app"
-            ReferencedContainer = "container:Dribbble app.xcodeproj">
+            BuildableName = "PhotoGallery.app"
+            BlueprintName = "PhotoGallery"
+            ReferencedContainer = "container:PhotoGallery.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
