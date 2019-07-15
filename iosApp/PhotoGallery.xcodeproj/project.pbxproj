@@ -599,6 +599,8 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					$SRCROOT/Frameworks,
+					"$SRCROOT/../shared/build/xcode-frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = karumi.com.photogallery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -625,6 +627,8 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					$SRCROOT/Frameworks,
+					"$SRCROOT/../shared/build/xcode-frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = karumi.com.photogallery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -641,15 +645,20 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BD48FG9BMV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(PLATFORM_DIR)/Developer/Library/Frameworks\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/KIF\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Nimble\"",
+					"$SRCROOT/../shared/build/xcode-frameworks",
+				);
 				INFOPLIST_FILE = "PhotoGallery Tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks/Shared.framework",
-					"@executable_path/../Frameworks",
-					"\"$(PLATFORM_DIR)/Developer/Library/Frameworks\"",
-					$SRCROOT,
+					$SRCROOT/Frameworks,
+					"$SRCROOT/../shared/build/xcode-frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -670,15 +679,20 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BD48FG9BMV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(PLATFORM_DIR)/Developer/Library/Frameworks\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/KIF\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Nimble\"",
+					$SRCROOT,
+				);
 				INFOPLIST_FILE = "PhotoGallery Tests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks/Shared.framework",
-					"@executable_path/../Frameworks",
-					"\"$(PLATFORM_DIR)/Developer/Library/Frameworks\"",
-					$SRCROOT,
+					$SRCROOT/Frameworks,
+					"$SRCROOT/../shared/build/xcode-frameworks",
 				);
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.karumi.Dribbble-app-Tests";

@@ -15,7 +15,7 @@ class PhotoListViewController: UIViewController, PhotoListPresenterView {
         allItemsCollectionView.dataSource = self
         allItemsCollectionView.delegate = self
         allItemsCollectionView.register(UINib(nibName: "PhotoCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "PhotoCollectionViewCellReuseIdentifier")
-        presenter = PhotoListPresenter(view: self, getAllPhotos: GalleryInjector().use.getPhotos)
+        presenter = PhotoListPresenter(view: self, getAllPhotos: GalleryInjector().use.getPhotos())
         presenter.onCreate()
         errorText.isHidden = true
     }

@@ -4,19 +4,21 @@ import com.karumi.gallery.data.PhotosApiClient
 import com.karumi.gallery.data.getEngine
 import com.karumi.gallery.generated.KotlinConfig
 import com.karumi.gallery.usecase.GetPhotos
+import kotlinx.atomicfu.AtomicRef
+import kotlinx.atomicfu.atomic
 
 object GalleryInjector {
-  private var galleryInjector: InjectionModule? = null
+  private val galleryInjector: AtomicRef<InjectionModule?> = atomic(null)
   private val defaultInjector = InjectionModule()
 
   operator fun invoke(): InjectionModule =
-    galleryInjector ?: defaultInjector
+    galleryInjector.value ?: defaultInjector
 
   val use: InjectionModule
     get() = invoke()
 
   fun config(injector: InjectionModule) {
-    galleryInjector = injector
+    galleryInjector.lazySet(injector)
   }
 }
 

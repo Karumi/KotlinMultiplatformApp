@@ -3,6 +3,7 @@ package com.karumi.gallery.app
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
+import com.karumi.gallery.test.PhotoListStub
 import com.karumi.gallery.data.PhotosApiClient
 import com.karumi.gallery.model.PhotoShot
 import com.karumi.photo.app.R
@@ -101,9 +102,5 @@ class MainActivityTest {
 
   private fun startActivity() {
     activityRule.launchActivity(null)
-  }
-
-  inner class PhotoListStub(private val apiClient: PhotosApiClient) : InjectionModule() {
-    override fun getPhotosApiClient(): PhotosApiClient = apiClient
   }
 }

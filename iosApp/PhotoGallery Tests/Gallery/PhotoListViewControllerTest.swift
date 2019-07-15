@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 import KIF
 import Nimble
-@testable import Dribbble_app
+@testable import PhotoGallery
 import Shared
 
 class PhotoListViewControllerTests: AcceptanceTestCase {
@@ -17,7 +17,7 @@ class PhotoListViewControllerTests: AcceptanceTestCase {
     func testDisplayTenPhotoItemsWithTheAuthorName() {
         givenPhotos()
         
-        openPhotoListViewController
+        openPhotoListViewController()
         
         let tableView = tester().waitForView(withAccessibilityLabel: "PhotoCollectionViewCellReuseIdentifier") as! UICollectionView
         expect(tableView.numberOfItems(inSection: 0)).to(equal(10))
@@ -34,8 +34,7 @@ class PhotoListViewControllerTests: AcceptanceTestCase {
             )
             photos.append(photo)
         }
-        let injectionModule = InjectionModule()
-        injectionModule.getPhotosApiClient = PhotoApiClientStub(photos: photos)
+        let injectionModule = TestModule(apiClient: PhotoApiClientStub(photos: photos))
         GalleryInjector().config(injector: injectionModule)
     }
     
@@ -48,5 +47,18 @@ class PhotoListViewControllerTests: AcceptanceTestCase {
         present(viewController: rootViewController)
         tester().waitForAnimationsToFinish()
         return photosViewController
+    }
+    
+    class TestModule: InjectionModule {
+        
+        private var apiClient: PhotosApiClient
+        
+        init(apiClient: PhotosApiClient) {
+            self.apiClient = apiClient
+        }
+        
+        override func getPhotosApiClient() -> PhotosApiClient {
+            return self.apiClient
+        }
     }
 }
