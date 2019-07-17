@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="photo_list_margin">24dp</dimen>
+  <dimen name="elevation">4dp</dimen>
+  <dimen name="item_margin">8dp</dimen>
+  <dimen name="item_height">120dp</dimen>
+</resources>

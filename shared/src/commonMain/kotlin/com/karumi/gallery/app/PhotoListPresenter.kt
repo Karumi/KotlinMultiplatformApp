@@ -1,19 +1,48 @@
 package com.karumi.gallery.app
 
-import com.karumi.gallery.app.usecase.PhotoShot
-import com.karumi.gallery.app.usecase.GetAllPhotos
+import com.karumi.gallery.logError
+import com.karumi.gallery.logInfo
+import com.karumi.gallery.model.PhotoShot
+import com.karumi.gallery.usecase.GetPhotos
+import kotlinx.coroutines.Job
 
 class PhotoListPresenter(
   private val view: View,
-  private val getAllPhotos: GetAllPhotos
+  private val getAllPhotos: GetPhotos
 ) {
 
+  companion object {
+    private const val TAG = "PhotoListPresenter"
+  }
+
+  private var getPhotosJob: Job? = null
+
   fun onCreate() {
-    val allShots = getAllPhotos()
-    view += allShots
+    view.showLoader()
+    getPhotosJob = launchInMain {
+      try {
+        logInfo(TAG, "Start getting photos")
+
+        val allShots = getAllPhotos()
+        view += allShots
+        logInfo(TAG, "${allShots.size} photos received")
+      } catch (ex: Exception) {
+        logError(TAG, "Load photos error: ${ex.message}")
+        view.onLoadError()
+      } finally {
+        view.hideLoader()
+      }
+    }
+  }
+
+  fun detachView() {
+    getPhotosJob?.cancel()
   }
 
   interface View {
     operator fun plusAssign(shots: List<PhotoShot>)
+    fun showLoader()
+    fun hideLoader()
+    fun onLoadError()
   }
 }

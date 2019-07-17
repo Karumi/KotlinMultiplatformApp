@@ -1,6 +1,13 @@
 platform :ios, "11.4"
 
-target "Dribbble app" do
-  use_frameworks!
+use_frameworks!
+
+target "PhotoGallery" do
   pod "SwiftLint"
+  pod "SDWebImage"
+end
+
+target "PhotoGallery Tests" do
+  pod "Nimble"
+  pod "KIF"  
 end

@@ -2,4 +2,5 @@
   <string name="app_name">Gallery</string>
   <string name="photos_list_title">photo</string>
   <string name="photos_list_shot_author">by %1s</string>
+  <string name="oops_something_went_wrong">Oops something went wrong!</string>
 </resources>

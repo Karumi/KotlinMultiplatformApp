@@ -1,16 +1,32 @@
 PODS:
+  - KIF (3.7.7):
+    - KIF/Core (= 3.7.7)
+  - KIF/Core (3.7.7)
+  - Nimble (8.0.1)
+  - SDWebImage (5.0.4):
+    - SDWebImage/Core (= 5.0.4)
+  - SDWebImage/Core (5.0.4)
   - SwiftLint (0.32.0)
 
 DEPENDENCIES:
+  - KIF
+  - Nimble
+  - SDWebImage
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - KIF
+    - Nimble
+    - SDWebImage
     - SwiftLint
 
 SPEC CHECKSUMS:
+  KIF: 6f525b18d4cca3d6445f3c5d683294e9157bd3f4
+  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
+  SDWebImage: c739016e4bdf0a4a1f9a04b5e0385395ad63a282
   SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
 
-PODFILE CHECKSUM: 3b395d91adceffcf66a5c2499d490ef86ecaed0f
+PODFILE CHECKSUM: 2ec6d5b22449718bc729ffbee779c1eae0c31f03
 
 COCOAPODS: 1.6.1

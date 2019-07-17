@@ -10,14 +10,14 @@ plugins {
 }
 
 android {
-  buildToolsVersion = "28.0.2"
+  buildToolsVersion = "28.0.3"
   compileSdkVersion(28)
   defaultConfig {
     minSdkVersion(21)
     targetSdkVersion(28)
     multiDexEnabled = true
     versionCode = 1
-    testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
   buildTypes {
     getByName("release") {
@@ -29,31 +29,45 @@ android {
   lintOptions {
     setAbortOnError(false)
   }
-
+  compileOptions {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+  }
   sourceSets {
     getByName("main").java.srcDirs("src/main/kotlin")
+    getByName("androidTest").java.srcDirs("src/androidTest/kotlin")
   }
   packagingOptions {
-    exclude("META-INF/LICENSE")
-    exclude("META-INF/ktor-http.kotlin_module")
-    exclude("META-INF/ktor-client-json.kotlin_module")
-    exclude("META-INF/ktor-client-core.kotlin_module")
-    exclude("META-INF/kotlinx-io.kotlin_module")
-    exclude("META-INF/atomicfu.kotlin_module")
-    exclude("META-INF/ktor-utils.kotlin_module")
-    exclude("META-INF/kotlinx-coroutines-io.kotlin_module")
+    exclude("META-INF/*")
   }
 }
 
 dependencies {
-  implementation("com.android.support.constraint:constraint-layout:1.1.3")
-  implementation("com.android.support.constraint:constraint-layout:1.1.3")
-  implementation("com.android.support:appcompat-v7:28.0.0")
-  implementation("com.android.support:recyclerview-v7:28.0.0")
-  implementation("com.android.support:recyclerview-v7:28.0.0")
-  implementation("com.github.pedrovgs:renderers:3.4.0")
   implementation(kotlin("stdlib-jdk7", KotlinCompilerVersion.VERSION))
   implementation(project(":shared"))
+
+  implementation("androidx.constraintlayout:constraintlayout:2.0.0-beta1")
+  implementation("androidx.appcompat:appcompat:1.0.2")
+  implementation("androidx.recyclerview:recyclerview:1.0.0")
+  implementation("androidx.lifecycle:lifecycle-runtime:2.0.0")
+  implementation("androidx.lifecycle:lifecycle-extensions:2.0.0")
+  implementation("com.github.pedrovgs:renderers:3.4.0")
+  implementation("com.squareup.okhttp3:okhttp:3.11.0")
+  implementation("com.squareup.picasso:picasso:2.71828")
+
+  testImplementation("junit:junit:4.12")
+  androidTestImplementation("org.mockito:mockito-android:2.28.2")
+  androidTestImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0")
+  androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0") {
+    exclude(group = "androidx.annotation")
+  }
+  androidTestImplementation("androidx.test:runner:1.2.0")
+  androidTestImplementation("androidx.test:rules:1.2.0")
+  androidTestImplementation("androidx.test.ext:junit:1.1.1")
+  androidTestImplementation("com.schibsted.spain:barista:3.1.0") {
+    exclude(group = "androidx.annotation")
+    exclude(group = "org.jetbrains.kotlin")
+  }
 }
 
 ktlint {
