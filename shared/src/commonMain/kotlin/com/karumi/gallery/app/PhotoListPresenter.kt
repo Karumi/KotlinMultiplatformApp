@@ -19,19 +19,19 @@ class PhotoListPresenter(
 
   fun onCreate() {
     view.showLoader()
-    try {
-      getPhotosJob = launchInMain {
+    getPhotosJob = launchInMain {
+      try {
         logInfo(TAG, "Start getting photos")
 
         val allShots = getAllPhotos()
         view += allShots
         logInfo(TAG, "${allShots.size} photos received")
+      } catch (ex: Exception) {
+        logError(TAG, "Load photos error: ${ex.message}")
+        view.onLoadError()
+      } finally {
+        view.hideLoader()
       }
-    } catch (ex: Exception) {
-      logError(TAG, "Load photos error: ${ex.message}")
-      view.onLoadError()
-    } finally {
-      view.hideLoader()
     }
   }
 

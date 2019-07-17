@@ -7,20 +7,56 @@ import Shared
 
 class PhotoListViewControllerTests: AcceptanceTestCase {
     
-    //should_display_ten_photo_items_with_the_author_name
-    //should_not_display_error_text_when_there_are_items
-    //should_display_error_text_when_there_is_an_error
-    //should_display_progress_before_getting_photos
-    //should_display_app_title_on_toolbar
-    //should_not_display_progress_after_getting_photos
-    
     func testDisplayTenPhotoItemsWithTheAuthorName() {
         givenPhotos()
         
         openPhotoListViewController()
         
-        let tableView = tester().waitForView(withAccessibilityLabel: "PhotoCollectionViewCellReuseIdentifier") as! UICollectionView
+        let tableView = tester().waitForView(withAccessibilityLabel: "PhotoCollectionView") as! UICollectionView
         expect(tableView.numberOfItems(inSection: 0)).to(equal(10))
+    }
+    
+    func testNotDisplayErrorTextWhenThereAreItems() {
+        givenPhotos()
+        
+        openPhotoListViewController()
+        
+        tester().waitForAbsenceOfView(withAccessibilityLabel: "Oops something went wrong!")
+    }
+    
+    func testDisplayErrorTextWhenThereIsAnError() {
+        givenAnError()
+        
+        openPhotoListViewController()
+        
+        tester().waitForView(withAccessibilityLabel: "Oops something went wrong!")
+    }
+    
+    func testDisplayLoadingActivityBeforeGettingPhotos() {
+        openPhotoListViewController()
+        
+        tester().waitForView(withAccessibilityLabel: "LoadingView")
+    }
+    
+    func testNotDisplayLoadingActivityAfterGettingPhotos() {
+        givenPhotos()
+        
+        openPhotoListViewController()
+        
+        tester().waitForAbsenceOfView(withAccessibilityLabel: "LoadingView")
+    }
+    
+    func testDisplayAppTitle() {
+        givenPhotos()
+        
+        openPhotoListViewController()
+        
+        tester().waitForView(withAccessibilityLabel: "Gallery")
+    }
+    
+    private func givenAnError() {
+        let injectionModule = TestModule(apiClient: PhotoApiClientStub(photos: [PhotoShot](), withErrors: true))
+        GalleryInjector().config(injector: injectionModule)
     }
     
     private func givenPhotos(_ photoNumber: Int = 10) {
@@ -34,7 +70,7 @@ class PhotoListViewControllerTests: AcceptanceTestCase {
             )
             photos.append(photo)
         }
-        let injectionModule = TestModule(apiClient: PhotoApiClientStub(photos: photos))
+        let injectionModule = TestModule(apiClient: PhotoApiClientStub(photos: photos, withErrors: false))
         GalleryInjector().config(injector: injectionModule)
     }
     
