@@ -14,9 +14,12 @@ sdk.dir=/Users/<username>/Library/Android/sdk
 
 ### Run tests locally
 
-- JVM shared code: ./gradlew :shared:jvmTest
-- IOS application: xcodebuild -workspace 'Dribbble app.xcworkspace' -scheme 'Dribbble app' -destination 'platform=iOS Simulator,name=iPhone 6s Plus' build test CODE_SIGN_IDENTITY=-
+- Shared code: ./gradlew test connectedAndroidTest
+- IOS application: xcodebuild -workspace 'PhotoGallery.xcworkspace' -scheme 'PhotoGallery' -destination 'platform=iOS Simulator,name=iPhone 6s Plus' build test CODE_SIGN_IDENTITY=-
 
+### Run app
+
+To run the application use the same tools you use in Android and IOS when you open the project with Intellj/Android Studio and XCode
 
   
 License
