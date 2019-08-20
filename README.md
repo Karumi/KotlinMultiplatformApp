@@ -1,26 +1,29 @@
-# ![Karumi logo][karumilogo] Kotlin multiplatform App
+<p align="center"><img src ="./art/header.png" /></p>
 
-Application example using Kotlin multiplatform getting information from [Unplash][unplash].
+---------------------
 
-### Import project
+Application example with Kotlin multiplatform that renders images from [Unplash][unplash].
 
-If you receive an error message reading "SDK location not found" while building the iOS project that means you need to define the SDK location path in a `local.properties` file for the Android SDK and NDK.
+### Running tests locally
 
-> local.properties:
+- Shared code: `./gradlew test connectedAndroidTest`
+- iOS application: `xcodebuild -workspace 'PhotoGallery.xcworkspace' -scheme 'PhotoGallery' -destination 'platform=iOS Simulator,name=iPhone 6s Plus' build test CODE_SIGN_IDENTITY=-`
+
+### Running the app
+
+To run the application use the same tools you use in Android and iOS. Just open the project with Intellj/Android Studio for the Android project and XCode for the iOS one.
+
+### FAQ
+
+**I'm receiving an error message reading `SDK location not found` while building the iOS project.**
+
+This usually means you need to define the SDK location path in a `local.properties` file for the Android SDK and NDK.
+
+> local.properties
 ```
 ndk.dir=/Users/<username>/Library/Android/sdk/ndk-bundle
 sdk.dir=/Users/<username>/Library/Android/sdk
 ```
-
-### Run tests locally
-
-- Shared code: ./gradlew test connectedAndroidTest
-- IOS application: xcodebuild -workspace 'PhotoGallery.xcworkspace' -scheme 'PhotoGallery' -destination 'platform=iOS Simulator,name=iPhone 6s Plus' build test CODE_SIGN_IDENTITY=-
-
-### Run app
-
-To run the application use the same tools you use in Android and IOS when you open the project with Intellj/Android Studio and XCode
-
   
 License
 -------
@@ -39,6 +42,4 @@ License
     See the License for the specific language governing permissions and
     limitations under the License.
 
-[karumilogo]: https://cloud.githubusercontent.com/assets/858090/11626547/e5a1dc66-9ce3-11e5-908d-537e07e82090.png
-[codemetric]: https://github.com/codecentric/spring-boot-admin
 [unplash]: https://unsplash.com/
