@@ -2,7 +2,12 @@
 
 ---------------------
 
-Application example with Kotlin multiplatform that renders images from [Unplash][unplash].
+Application example with Kotlin multiplatform that renders images from [Unplash][unplash]. 
+
+You can read about the implementation in the following Multiplatform blog post series:
+
+- [First steps into Kotlin Multiplatform](https://blog.karumi.com/first-steps-into-kotlin-multiplatform/)
+- [Shared Library in Kotlin Multiplatform](https://blog.karumi.com/shared-library-in-kotlin-multiplatform/)
 
 ### Running tests locally
 
