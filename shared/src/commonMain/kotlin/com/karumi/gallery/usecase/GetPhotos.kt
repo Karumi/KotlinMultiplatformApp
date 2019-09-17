@@ -1,8 +1,9 @@
 package com.karumi.gallery.usecase
 
-import com.karumi.gallery.data.PhotosApiClient
+import com.karumi.gallery.domain.PhotosFlow
 import com.karumi.gallery.model.Photos
+import kotlinx.coroutines.flow.Flow
 
-class GetPhotos(private val photosApiClient: PhotosApiClient) {
-  suspend operator fun invoke(): Photos = photosApiClient.getPhotos()
+class GetPhotos(private val photosFlow: PhotosFlow) {
+  suspend operator fun invoke(): Flow<Photos> = photosFlow.get()
 }

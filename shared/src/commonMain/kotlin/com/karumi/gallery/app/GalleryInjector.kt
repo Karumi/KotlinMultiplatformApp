@@ -2,6 +2,7 @@ package com.karumi.gallery.app
 
 import com.karumi.gallery.data.PhotosApiClient
 import com.karumi.gallery.data.getEngine
+import com.karumi.gallery.domain.PhotosFlow
 import com.karumi.gallery.generated.KotlinConfig
 import com.karumi.gallery.usecase.GetPhotos
 import kotlin.native.concurrent.ThreadLocal
@@ -24,5 +25,8 @@ open class InjectionModule {
     PhotosApiClient(getEngine(), KotlinConfig.UNPLASH_KEY)
 
   open fun getPhotos(): GetPhotos =
-    GetPhotos(getPhotosApiClient())
+    GetPhotos(getPhotosFlow())
+
+  open fun getPhotosFlow(): PhotosFlow =
+    PhotosFlow(getPhotosApiClient())
 }
