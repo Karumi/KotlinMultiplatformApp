@@ -2,7 +2,7 @@ package com.karumi.gallery.app
 
 import com.karumi.gallery.logError
 import com.karumi.gallery.logInfo
-import com.karumi.gallery.model.PhotoShot
+import com.karumi.gallery.model.Photos
 import com.karumi.gallery.usecase.GetPhotos
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
@@ -25,17 +25,15 @@ class PhotoListPresenter(
   private val job = Job()
 
   fun onCreate() = launchInMain {
-    view.showLoader()
+    view.render(View.State.Loading)
     getAllPhotos()
       .flowOnBackground()
       .catch {
+        view.render(View.State.Error)
         logError(TAG, "Load photos error: ${it.message}")
-        view.hideLoader()
-        view.onLoadError()
       }.collect {
+        view.render(View.State.Success(it))
         logInfo(TAG, "${it.size} photos received")
-        view.hideLoader()
-        view += it
       }
   }
 
@@ -44,9 +42,12 @@ class PhotoListPresenter(
   }
 
   interface View {
-    operator fun plusAssign(shots: List<PhotoShot>)
-    fun showLoader()
-    fun hideLoader()
-    fun onLoadError()
+    fun render(state: State)
+
+    sealed class State {
+      object Loading : State()
+      object Error : State()
+      data class Success(val photos: Photos) : State()
+    }
   }
 }

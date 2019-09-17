@@ -21,7 +21,7 @@ import platform.darwin.dispatch_time
 import kotlin.coroutines.CoroutineContext
 
 actual fun CoroutineScope.launchInMain(block: suspend CoroutineScope.() -> Unit): Job =
-  GlobalScope.launch(MainDispatcher) { block() }
+  launch(MainDispatcher) { block() }
 
 actual fun <T> Flow<T>.flowOnBackground(): Flow<T> = flowOn(MainDispatcher)
 

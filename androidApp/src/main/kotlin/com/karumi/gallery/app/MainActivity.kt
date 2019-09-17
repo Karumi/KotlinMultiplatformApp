@@ -33,20 +33,29 @@ class MainActivity : AppCompatActivity(), PhotoListPresenter.View {
     presenter.detachView()
   }
 
-  override fun showLoader() {
+  override fun render(state: PhotoListPresenter.View.State) {
+    when (state) {
+      is PhotoListPresenter.View.State.Loading -> renderLoading()
+      is PhotoListPresenter.View.State.Error -> renderError()
+      is PhotoListPresenter.View.State.Success -> renderPhotos(state.photos)
+    }
+  }
+
+  private fun renderLoading() {
     progress.visibility = View.VISIBLE
+    errorInformation.visibility = View.GONE
   }
 
-  override fun hideLoader() {
+  private fun renderError() {
     progress.visibility = View.GONE
-  }
-
-  override fun onLoadError() {
     errorInformation.visibility = View.VISIBLE
   }
 
-  override fun plusAssign(shots: List<PhotoShot>) {
-    val items = shots.map { PhotoItem(it.id, it.thumbnailUrl, it.authorName) }
+  private fun renderPhotos(photos: List<PhotoShot>) {
+    progress.visibility = View.GONE
+    errorInformation.visibility = View.GONE
+
+    val items = photos.map { PhotoItem(it.id, it.thumbnailUrl, it.authorName) }
     adapter.addAll(items)
     adapter.notifyDataSetChanged()
   }
