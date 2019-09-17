@@ -45,6 +45,7 @@ kotlin {
 
                 implementation "io.ktor:ktor-client-core:$ktor_version"
                 implementation "io.ktor:ktor-client-json:$ktor_version"
+                implementation "io.ktor:ktor-client-logging:$ktor_version"
                 implementation "io.ktor:ktor-client-serialization:$ktor_version"
             }
         }
@@ -68,6 +69,7 @@ kotlin {
                 implementation "io.ktor:ktor-client-android:$ktor_version"
                 implementation "io.ktor:ktor-client-core-jvm:$ktor_version"
                 implementation "io.ktor:ktor-client-json-jvm:$ktor_version"
+                implementation "io.ktor:ktor-client-logging-jvm:$ktor_version"
                 implementation "io.ktor:ktor-client-serialization-jvm:$ktor_version"
             }
         }
@@ -89,6 +91,7 @@ kotlin {
                 implementation "io.ktor:ktor-client-ios:$ktor_version"
                 implementation "io.ktor:ktor-client-core-native:$ktor_version"
                 implementation "io.ktor:ktor-client-json-native:$ktor_version"
+                implementation "io.ktor:ktor-client-logging-native:$ktor_version"
                 implementation "io.ktor:ktor-client-serialization-native:$ktor_version"
             }
         }
