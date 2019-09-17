@@ -1,7 +1,5 @@
 package com.karumi.gallery.app
 
-import com.karumi.gallery.logError
-import com.karumi.gallery.logInfo
 import com.karumi.gallery.model.Photos
 import com.karumi.gallery.usecase.GetPhotos
 import kotlinx.coroutines.CoroutineScope
@@ -18,23 +16,14 @@ class PhotoListPresenter(
   override val coroutineContext: CoroutineContext
     get() = job
 
-  companion object {
-    private const val TAG = "PhotoListPresenter"
-  }
-
   private val job = Job()
 
   fun onCreate() = launchInMain {
     view.render(View.State.Loading)
     getAllPhotos()
       .flowOnBackground()
-      .catch {
-        view.render(View.State.Error)
-        logError(TAG, "Load photos error: ${it.message}")
-      }.collect {
-        view.render(View.State.Success(it))
-        logInfo(TAG, "${it.size} photos received")
-      }
+      .catch { view.render(View.State.Error) }
+      .collect { view.render(View.State.Success(it)) }
   }
 
   fun detachView() {
