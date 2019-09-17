@@ -1,22 +1,21 @@
 package com.karumi.gallery.app
 
-import co.touchlab.stately.concurrency.AtomicReference
-import co.touchlab.stately.concurrency.value
-import co.touchlab.stately.freeze
 import com.karumi.gallery.data.PhotosApiClient
 import com.karumi.gallery.data.getEngine
 import com.karumi.gallery.generated.KotlinConfig
 import com.karumi.gallery.usecase.GetPhotos
+import kotlin.native.concurrent.ThreadLocal
 
+@ThreadLocal
 object GalleryInjector {
-  private val galleryInjector = AtomicReference<InjectionModule?>(null)
+  private var galleryInjector: InjectionModule? = null
   private val defaultInjector = InjectionModule()
 
   operator fun invoke(): InjectionModule =
-    galleryInjector.value ?: defaultInjector
+    galleryInjector ?: defaultInjector
 
   fun config(injector: InjectionModule) {
-    galleryInjector.value = injector.freeze()
+    galleryInjector = injector
   }
 }
 
