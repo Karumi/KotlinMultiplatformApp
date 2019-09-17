@@ -12,7 +12,7 @@ class PhotoApiClientStub(
 
   override suspend fun getPhotos(): Photos =
     when (stub) {
-      is Stub.Success -> runBlocking { stub.photos }
+      is Stub.Success -> stub.photos
       is Stub.Error -> throw RuntimeException()
       is Stub.Loading -> {
         delay(10000)

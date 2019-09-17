@@ -6,14 +6,13 @@ import Nimble
 import Shared
 
 class PhotoListViewControllerTests: AcceptanceTestCase {
-    
+
     func testDisplayTenPhotoItemsWithTheAuthorName() {
         givenPhotos()
         
         openPhotoListViewController()
         
-        let tableView = tester().waitForView(withAccessibilityLabel: "PhotoCollectionView") as! UICollectionView
-        expect(tableView.numberOfItems(inSection: 0)).to(equal(10))
+        expectToShowPhotoList(withNumberOfItems: 10)
     }
     
     func testNotDisplayErrorTextWhenThereAreItems() {
@@ -84,7 +83,7 @@ class PhotoListViewControllerTests: AcceptanceTestCase {
     }
     
     @discardableResult
-    fileprivate func openPhotoListViewController() -> PhotoListViewController {
+    private func openPhotoListViewController() -> PhotoListViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let photosViewController = storyboard.instantiateViewController(withIdentifier: "PhotoListViewController") as! PhotoListViewController
         let rootViewController = UINavigationController()
@@ -92,6 +91,12 @@ class PhotoListViewControllerTests: AcceptanceTestCase {
         present(viewController: rootViewController)
         tester().waitForAnimationsToFinish()
         return photosViewController
+    }
+
+    private func expectToShowPhotoList(withNumberOfItems numberOfItems: Int) {
+        let tableView = tester().waitForView(withAccessibilityLabel: "PhotoCollectionView") as! UICollectionView
+        tester().waitForCell(at: IndexPath(item: 0, section: 0), inCollectionViewWithAccessibilityIdentifier: "PhotoCollectionView")
+        expect(tableView.numberOfItems(inSection: 0)).to(equal(numberOfItems))
     }
     
     class TestModule: InjectionModule {
