@@ -12,6 +12,7 @@ data class PhotoEntity(
   val created_at: String,
   val urls: PhotoUrlsEntity,
   val description: String?,
+  val likes: Int,
   val user: UserEntity
 )
 
@@ -47,5 +48,6 @@ internal fun List<PhotoEntity>.toDomain(): Photos =
 internal fun PhotoEntity.toDomain(): PhotoShot = PhotoShot(
   id = id,
   authorName = user.name,
-  thumbnailUrl = urls.thumb
+  thumbnailUrl = urls.thumb,
+  numberOfLikes = likes
 )
