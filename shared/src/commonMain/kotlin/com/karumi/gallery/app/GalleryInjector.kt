@@ -4,7 +4,9 @@ import com.karumi.gallery.data.PhotosApiClient
 import com.karumi.gallery.data.getEngine
 import com.karumi.gallery.generated.KotlinConfig
 import com.karumi.gallery.usecase.GetPhotos
+import kotlin.native.concurrent.ThreadLocal
 
+@ThreadLocal
 object GalleryInjector {
   private var galleryInjector: InjectionModule? = null
   private val defaultInjector = InjectionModule()

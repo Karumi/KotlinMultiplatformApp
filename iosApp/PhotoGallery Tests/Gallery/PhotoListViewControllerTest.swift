@@ -33,6 +33,8 @@ class PhotoListViewControllerTests: AcceptanceTestCase {
     }
     
     func testDisplayLoadingActivityBeforeGettingPhotos() {
+        givenAlwaysLoading()
+
         openPhotoListViewController()
         
         tester().waitForView(withAccessibilityLabel: "LoadingView")
@@ -53,9 +55,16 @@ class PhotoListViewControllerTests: AcceptanceTestCase {
         
         tester().waitForView(withAccessibilityLabel: "Gallery")
     }
+
+    private func givenAlwaysLoading() {
+        let injectionModule = TestModule(
+            apiClient: PhotoApiClientStub(stub: PhotoApiClientStub.StubLoading()))
+        GalleryInjector().config(injector: injectionModule)
+    }
     
     private func givenAnError() {
-        let injectionModule = TestModule(apiClient: PhotoApiClientStub(photos: [PhotoShot](), withErrors: true))
+        let injectionModule = TestModule(
+            apiClient: PhotoApiClientStub(stub: PhotoApiClientStub.StubError()))
         GalleryInjector().config(injector: injectionModule)
     }
     
@@ -70,7 +79,7 @@ class PhotoListViewControllerTests: AcceptanceTestCase {
             )
             photos.append(photo)
         }
-        let injectionModule = TestModule(apiClient: PhotoApiClientStub(photos: photos, withErrors: false))
+        let injectionModule = TestModule(apiClient: PhotoApiClientStub(stub: PhotoApiClientStub.StubSuccess(photos: photos)))
         GalleryInjector().config(injector: injectionModule)
     }
     
