@@ -27,7 +27,7 @@ android {
   }
 
   lintOptions {
-    setAbortOnError(false)
+    isAbortOnError = false
   }
   compileOptions {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -46,14 +46,17 @@ dependencies {
   implementation(kotlin("stdlib-jdk7", KotlinCompilerVersion.VERSION))
   implementation(project(":shared"))
 
-  implementation("androidx.constraintlayout:constraintlayout:2.0.0-beta1")
-  implementation("androidx.appcompat:appcompat:1.0.2")
+  implementation("androidx.constraintlayout:constraintlayout:2.0.0-beta2")
+  implementation("androidx.appcompat:appcompat:1.1.0")
   implementation("androidx.recyclerview:recyclerview:1.0.0")
-  implementation("androidx.lifecycle:lifecycle-runtime:2.0.0")
-  implementation("androidx.lifecycle:lifecycle-extensions:2.0.0")
+  implementation("androidx.lifecycle:lifecycle-runtime:2.1.0")
+  implementation("androidx.lifecycle:lifecycle-extensions:2.1.0")
   implementation("com.github.pedrovgs:renderers:3.4.0")
-  implementation("com.squareup.okhttp3:okhttp:3.11.0")
+  implementation("com.squareup.okhttp3:okhttp:3.12.1")
   implementation("com.squareup.picasso:picasso:2.71828")
+
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.1")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.1")
 
   testImplementation("junit:junit:4.12")
   androidTestImplementation("org.mockito:mockito-android:2.28.2")
