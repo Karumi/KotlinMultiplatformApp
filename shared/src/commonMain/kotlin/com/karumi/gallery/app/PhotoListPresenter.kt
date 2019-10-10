@@ -1,48 +1,42 @@
 package com.karumi.gallery.app
 
-import com.karumi.gallery.logError
-import com.karumi.gallery.logInfo
-import com.karumi.gallery.model.PhotoShot
+import com.karumi.gallery.model.Photos
 import com.karumi.gallery.usecase.GetPhotos
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.collect
+import kotlin.coroutines.CoroutineContext
 
 class PhotoListPresenter(
   private val view: View,
   private val getAllPhotos: GetPhotos
-) {
+) : CoroutineScope {
 
-  companion object {
-    private const val TAG = "PhotoListPresenter"
-  }
+  override val coroutineContext: CoroutineContext
+    get() = job
 
-  private var getPhotosJob: Job? = null
+  private val job = Job()
 
-  fun onCreate() {
-    view.showLoader()
-    getPhotosJob = launchInMain {
-      try {
-        logInfo(TAG, "Start getting photos")
-
-        val allShots = getAllPhotos()
-        view += allShots
-        logInfo(TAG, "${allShots.size} photos received")
-      } catch (ex: Exception) {
-        logError(TAG, "Load photos error: ${ex.message}")
-        view.onLoadError()
-      } finally {
-        view.hideLoader()
-      }
-    }
+  fun onCreate() = launchInMain {
+    view.render(View.State.Loading)
+    getAllPhotos()
+      .flowOnBackground()
+      .catch { view.render(View.State.Error) }
+      .collect { view.render(View.State.Success(it)) }
   }
 
   fun detachView() {
-    getPhotosJob?.cancel()
+    job.cancel()
   }
 
   interface View {
-    operator fun plusAssign(shots: List<PhotoShot>)
-    fun showLoader()
-    fun hideLoader()
-    fun onLoadError()
+    fun render(state: State)
+
+    sealed class State {
+      object Loading : State()
+      object Error : State()
+      data class Success(val photos: Photos) : State()
+    }
   }
 }

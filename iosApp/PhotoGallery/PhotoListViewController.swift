@@ -23,23 +23,33 @@ class PhotoListViewController: UIViewController, PhotoListPresenterView {
         errorTextLabel.isHidden = true
     }
 
-    func plusAssign(shots: [PhotoShot]) {
-        let newItems = shots.map(PhotoListItem.init)
+    func render(state: PhotoListPresenterViewState) {
+        if state is PhotoListPresenterViewState.Loading {
+            renderLoading()
+        } else if state is PhotoListPresenterViewState.Error {
+            renderError()
+        } else if let state = state as? PhotoListPresenterViewState.Success {
+            render(photos: state.photos)
+        }
+    }
+
+    func renderLoading() {
+        loadingIndicator.startAnimating()
+        errorTextLabel.isHidden = true
+    }
+    
+    func renderError() {
+        loadingIndicator.isHidden = true
+        errorTextLabel.isHidden = false
+    }
+
+    func render(photos: [PhotoShot]) {
+        loadingIndicator.isHidden = true
+        errorTextLabel.isHidden = true
+
+        let newItems = photos.map(PhotoListItem.init)
         items.append(contentsOf: newItems)
         allItemsCollectionView.reloadData()
-    }
-    
-    func showLoader() {
-        loadingIndicator.startAnimating()
-    }
-    
-    func hideLoader() {
-        loadingIndicator.stopAnimating()
-        loadingIndicator.isHidden = true
-    }
-    
-    func onLoadError() {
-        errorTextLabel.isHidden = false
     }
 }
 

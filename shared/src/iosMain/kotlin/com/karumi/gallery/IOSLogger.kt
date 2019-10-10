@@ -2,7 +2,7 @@ package com.karumi.gallery
 
 import platform.Foundation.NSLog
 
-actual fun logError(tag: String, message: String) {
+actual fun logError(tag: String, message: String, error: Throwable?) {
   NSLog("$tag: $message")
 }
 
