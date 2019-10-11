@@ -54,6 +54,7 @@ dependencies {
   implementation("com.github.pedrovgs:renderers:3.4.0")
   implementation("com.squareup.okhttp3:okhttp:3.12.1")
   implementation("com.squareup.picasso:picasso:2.71828")
+  implementation("com.squareup.sqldelight:android-driver:1.1.3")
 
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.1")
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.1")
