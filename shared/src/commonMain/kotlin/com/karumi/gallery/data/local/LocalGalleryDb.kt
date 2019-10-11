@@ -13,7 +13,7 @@ object LocalGalleryDb {
 
   internal fun dbSetup(driver: SqlDriver) {
     driverRef.value = driver.freeze()
-    dbRef.value = GalleryDb(driver)
+    dbRef.value = GalleryDb(driver).freeze()
     instance.photosQueries
   }
 

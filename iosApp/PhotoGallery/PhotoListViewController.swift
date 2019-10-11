@@ -11,7 +11,8 @@ class PhotoListViewController: UIViewController, PhotoListPresenterView {
     @IBOutlet weak var errorTextLabel: UILabel!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
+        GalleryInjector().invoke().doInit(driver: IosSqliteKt.defaultDriver(), timeProvider: TimeProvider())
         allItemsCollectionView.dataSource = self
         allItemsCollectionView.delegate = self
         allItemsCollectionView.register(UINib(nibName: "PhotoCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "PhotoCollectionViewCellReuseIdentifier")

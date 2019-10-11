@@ -1,6 +1,6 @@
 package com.karumi.gallery.data.test
 
-import com.karumi.gallery.data.PhotosApiClient
+import com.karumi.gallery.data.network.PhotosApiClient
 import com.karumi.gallery.data.getEngine
 import com.karumi.gallery.model.Photos
 import kotlinx.coroutines.delay

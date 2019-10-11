@@ -12,19 +12,23 @@ class LocalPhotosDataSource(private val cache: TTLCache) {
   }
 
   private fun insert(photos: PhotoShot) {
-    photosQueries.insertPhoto(
-      photos.id,
-      photos.thumbnailUrl,
-      photos.authorName,
-      photos.numberOfLikes
-    )
+    photosQueries.transaction {
+      photosQueries.insertPhoto(
+        photos.id,
+        photos.thumbnailUrl,
+        photos.authorName,
+        photos.numberOfLikes
+      )
+    }
     cache.persisTime()
   }
 
   fun getPhotos(): Photos = photosQueries.getAll(::toDomain).executeAsList()
 
   fun removeAll() {
-    photosQueries.deleteAll()
+    photosQueries.transaction {
+      photosQueries.deleteAll()
+    }
   }
 
   fun isExpired(): Boolean = cache.isExpired()
