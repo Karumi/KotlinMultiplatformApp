@@ -5,9 +5,9 @@ import com.karumi.gallery.domain.TTLCache
 import com.karumi.gallery.model.PhotoShot
 import com.karumi.gallery.model.Photos
 
-class LocalPhotosDataSource(private val cache: TTLCache) {
+open class LocalPhotosDataSource(private val cache: TTLCache) {
 
-  fun insert(photos: Photos) {
+  open fun insert(photos: Photos) {
     photos.forEach(::insert)
   }
 
@@ -23,13 +23,13 @@ class LocalPhotosDataSource(private val cache: TTLCache) {
     cache.persistTime()
   }
 
-  fun getPhotos(): Photos = photosQueries.getAll(::toDomain).executeAsList()
+  open fun getPhotos(): Photos = photosQueries.getAll(::toDomain).executeAsList()
 
-  fun removeAll() {
+  open fun removeAll() {
     photosQueries.transaction {
       photosQueries.deleteAll()
     }
   }
 
-  fun isExpired(): Boolean = cache.isExpired()
+  open fun isExpired(): Boolean = cache.isExpired()
 }

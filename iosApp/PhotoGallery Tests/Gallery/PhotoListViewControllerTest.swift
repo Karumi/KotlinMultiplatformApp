@@ -74,7 +74,8 @@ class PhotoListViewControllerTests: AcceptanceTestCase {
                 id: "\(index)",
                 thumbnailUrl: "https://images.unsplash.com/photo-1505816014357-96b5ff457e9a?ixlib" +
                 "=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80",
-                authorName: "Author \(index)"
+                authorName: "Author \(index)",
+                numberOfLikes: 0
             )
             photos.append(photo)
         }

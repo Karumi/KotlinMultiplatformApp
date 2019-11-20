@@ -1,7 +1,7 @@
 package com.karumi.gallery
 
 import com.karumi.gallery.app.runBlocking
-import com.karumi.gallery.data.PhotosApiClient
+import com.karumi.gallery.data.network.PhotosApiClient
 import com.karumi.gallery.resources.getEmptyPhotosList
 import com.karumi.gallery.resources.getInvalidBody
 import com.karumi.gallery.resources.getPhotosResponse
