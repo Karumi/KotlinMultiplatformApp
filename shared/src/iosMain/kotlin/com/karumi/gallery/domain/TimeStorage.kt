@@ -1,12 +1,13 @@
 package com.karumi.gallery.domain
 
 import platform.Foundation.NSUserDefaults
+import kotlin.time.days
 
 actual class TimeStorage {
 
   companion object {
     private const val TIME_ARG = "time_arg"
-    private const val SEVENTIES_YEAR = 14745600L
+    private val TIME_IN_MS_TO_EXPIRE_DATA = 90.days.toLongMilliseconds()
   }
 
   private val delegate: NSUserDefaults = NSUserDefaults.standardUserDefaults
@@ -19,5 +20,5 @@ actual class TimeStorage {
     if (it.equals(0)) timeAgo() else it
   }
 
-  private fun timeAgo(): Long = SEVENTIES_YEAR
+  private fun timeAgo(): Long = TIME_IN_MS_TO_EXPIRE_DATA
 }
