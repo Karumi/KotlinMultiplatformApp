@@ -10,13 +10,13 @@ actual class TimeStorage {
     private val TIME_IN_MS_TO_EXPIRE_DATA = 90.days.toLongMilliseconds()
   }
 
-  private val delegate: NSUserDefaults = NSUserDefaults.standardUserDefaults
+  private val userDefaults: NSUserDefaults = NSUserDefaults.standardUserDefaults
 
   actual fun persistTime(timestamp: Long) {
-    delegate.setInteger(timestamp, TIME_ARG)
+    userDefaults.setInteger(timestamp, TIME_ARG)
   }
 
-  actual fun getPersistedTimeInMs(): Long = delegate.integerForKey(TIME_ARG).let {
+  actual fun getPersistedTimeInMs(): Long = userDefaults.integerForKey(TIME_ARG).let {
     if (it.equals(0)) timeAgo() else it
   }
 
