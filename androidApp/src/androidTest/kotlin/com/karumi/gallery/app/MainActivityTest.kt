@@ -4,7 +4,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
 import com.karumi.gallery.test.PhotoListStub
-import com.karumi.gallery.data.PhotosApiClient
+import com.karumi.gallery.data.network.PhotosApiClient
 import com.karumi.gallery.model.PhotoShot
 import com.karumi.photo.app.R
 import com.nhaarman.mockitokotlin2.doReturn
@@ -90,7 +90,8 @@ class MainActivityTest {
         id = index.toString(),
         authorName = "Author $index",
         thumbnailUrl = "https://images.unsplash.com/photo-1505816014357-96b5ff457e9a?ixlib" +
-          "=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80"
+          "=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80",
+        numberOfLikes = 0
       )
     }.also { photos ->
       val apiClient = mock<PhotosApiClient> {
