@@ -20,7 +20,7 @@ class LocalPhotosDataSource(private val cache: TTLCache) {
         photos.numberOfLikes
       )
     }
-    cache.persisTime()
+    cache.persistTime()
   }
 
   fun getPhotos(): Photos = photosQueries.getAll(::toDomain).executeAsList()

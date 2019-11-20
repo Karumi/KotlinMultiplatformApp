@@ -13,5 +13,5 @@ class TTLCache(
   fun isExpired(): Boolean =
     timeStorage.getPersistedTime() + ttlInMillis <= timeProvider.getCurrentTime()
 
-  fun persisTime() = timeStorage.persistTime(timeProvider.getCurrentTime())
+  fun persistTime() = timeStorage.persistTime(timeProvider.getCurrentTime())
 }
