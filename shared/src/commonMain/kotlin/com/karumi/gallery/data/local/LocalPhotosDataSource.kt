@@ -8,7 +8,7 @@ import com.karumi.gallery.model.Photos
 class LocalPhotosDataSource(private val cache: TTLCache) {
 
   fun insert(photos: Photos) {
-    photos.map(::insert)
+    photos.forEach(::insert)
   }
 
   private fun insert(photos: PhotoShot) {

@@ -11,7 +11,7 @@ actual class TimeStorage(
   }
 
   actual fun persistTime(timestamp: Long) {
-    sharedPreferences.edit().apply {
+    sharedPreferences.edit().run {
       putLong(TIME_ARG, timestamp)
       apply()
     }
