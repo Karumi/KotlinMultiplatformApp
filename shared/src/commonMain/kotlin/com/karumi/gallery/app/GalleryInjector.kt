@@ -7,6 +7,7 @@ import com.karumi.gallery.data.local.LocalPhotosDataSource
 import com.karumi.gallery.domain.PhotosFlow
 import com.karumi.gallery.domain.TTLCache
 import com.karumi.gallery.domain.TimeProvider
+import com.karumi.gallery.domain.TimeStorage
 import com.karumi.gallery.generated.KotlinConfig
 import com.karumi.gallery.usecase.GetPhotos
 import com.squareup.sqldelight.db.SqlDriver
@@ -29,10 +30,16 @@ object GalleryInjector {
 open class InjectionModule {
 
   lateinit var timeProvider: TimeProvider
+  lateinit var timeStorage: TimeStorage
 
-  fun init(driver: SqlDriver, timeProvider: TimeProvider) {
+  fun init(
+    driver: SqlDriver,
+    timeProvider: TimeProvider,
+    timeStorage: TimeStorage
+  ) {
     LocalGalleryDb.dbSetup(driver)
     this.timeProvider = timeProvider
+    this.timeStorage = timeStorage
   }
 
   open fun getPhotosApiClient(): PhotosApiClient =
@@ -41,7 +48,7 @@ open class InjectionModule {
   open fun getPhotos(): GetPhotos =
     GetPhotos(getPhotosFlow())
 
-  open fun ttlCache(): TTLCache = TTLCache(timeProvider, ttl = 2.minutes)
+  open fun ttlCache(): TTLCache = TTLCache(timeStorage, timeProvider, ttl = 2.minutes)
 
   open fun getLocalPhotosDataSource(): LocalPhotosDataSource =
     LocalPhotosDataSource(ttlCache())
