@@ -15,7 +15,7 @@ actual class TimeStorage {
     delegate.setInteger(timestamp, TIME_ARG)
   }
 
-  actual fun getPersistedTime(): Long = delegate.integerForKey(TIME_ARG).let {
+  actual fun getPersistedTimeInMs(): Long = delegate.integerForKey(TIME_ARG).let {
     if (it.equals(0)) timeAgo() else it
   }
 

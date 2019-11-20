@@ -11,7 +11,7 @@ class TTLCache(
   private val ttlInMillis = ttl.toLongMilliseconds()
 
   fun isExpired(): Boolean =
-    timeStorage.getPersistedTime() + ttlInMillis <= timeProvider.getCurrentTime()
+    timeStorage.getPersistedTimeInMs() + ttlInMillis <= timeProvider.getCurrentTime()
 
   fun persistTime() = timeStorage.persistTime(timeProvider.getCurrentTime())
 }

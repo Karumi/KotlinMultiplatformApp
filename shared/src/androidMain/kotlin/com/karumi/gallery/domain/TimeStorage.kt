@@ -17,7 +17,7 @@ actual class TimeStorage(
     }
   }
 
-  actual fun getPersistedTime(): Long = sharedPreferences.getLong(TIME_ARG, timeAgo())
+  actual fun getPersistedTimeInMs(): Long = sharedPreferences.getLong(TIME_ARG, timeAgo())
 
   private fun timeAgo(): Long {
     val cal = Calendar.getInstance()
