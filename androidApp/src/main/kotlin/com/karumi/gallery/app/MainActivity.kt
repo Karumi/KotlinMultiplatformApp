@@ -56,6 +56,7 @@ class MainActivity : AppCompatActivity(), PhotoListPresenter.View {
     errorInformation.visibility = View.GONE
 
     val items = photos.map { PhotoItem(it.id, it.thumbnailUrl, it.authorName) }
+    adapter.clear()
     adapter.addAll(items)
     adapter.notifyDataSetChanged()
   }

@@ -57,13 +57,17 @@ class PhotoListViewControllerTests: AcceptanceTestCase {
 
     private func givenAlwaysLoading() {
         let injectionModule = TestModule(
-            apiClient: PhotoApiClientStub(stub: PhotoApiClientStub.StubLoading()))
+            apiClient: PhotoApiClientStub(stub: PhotosStub.Loading()),
+            localDataSource: PhotoDataSourceStub(stub: PhotosStub.Loading(), isExpired: true)
+        )
         GalleryInjector().config(injector: injectionModule)
     }
     
     private func givenAnError() {
         let injectionModule = TestModule(
-            apiClient: PhotoApiClientStub(stub: PhotoApiClientStub.StubError()))
+            apiClient: PhotoApiClientStub(stub: PhotosStub.Error()),
+            localDataSource: PhotoDataSourceStub(stub: PhotosStub.Loading(), isExpired: true)
+        )
         GalleryInjector().config(injector: injectionModule)
     }
     
@@ -74,11 +78,14 @@ class PhotoListViewControllerTests: AcceptanceTestCase {
                 id: "\(index)",
                 thumbnailUrl: "https://images.unsplash.com/photo-1505816014357-96b5ff457e9a?ixlib" +
                 "=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80",
-                authorName: "Author \(index)"
+                authorName: "Author \(index)",
+                numberOfLikes: 0
             )
             photos.append(photo)
         }
-        let injectionModule = TestModule(apiClient: PhotoApiClientStub(stub: PhotoApiClientStub.StubSuccess(photos: photos)))
+        let photoApiClient = PhotoApiClientStub(stub: PhotosStub.Success(photos: photos))
+        let localDataSource = PhotoDataSourceStub(stub: PhotosStub.Loading(), isExpired: true)
+        let injectionModule = TestModule(apiClient: photoApiClient, localDataSource: localDataSource)
         GalleryInjector().config(injector: injectionModule)
     }
     
@@ -102,13 +109,19 @@ class PhotoListViewControllerTests: AcceptanceTestCase {
     class TestModule: InjectionModule {
         
         private var apiClient: PhotosApiClient
+        private var localDataSource: LocalPhotosDataSource
         
-        init(apiClient: PhotosApiClient) {
+        init(apiClient: PhotosApiClient, localDataSource: LocalPhotosDataSource) {
             self.apiClient = apiClient
+            self.localDataSource = localDataSource
         }
         
         override func getPhotosApiClient() -> PhotosApiClient {
             return self.apiClient
+        }
+        
+        override func getLocalPhotosDataSource() -> LocalPhotosDataSource {
+            return self.localDataSource
         }
     }
 }

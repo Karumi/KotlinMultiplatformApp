@@ -2,11 +2,11 @@ package com.karumi.gallery.app
 
 import com.karumi.gallery.model.Photos
 import com.karumi.gallery.usecase.GetPhotos
+import kotlin.coroutines.CoroutineContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
-import kotlin.coroutines.CoroutineContext
 
 class PhotoListPresenter(
   private val view: View,

@@ -11,7 +11,8 @@ class PhotoListViewController: UIViewController, PhotoListPresenterView {
     @IBOutlet weak var errorTextLabel: UILabel!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
+        GalleryInjector().invoke().doInit(driver: IosSqliteKt.defaultDriver(), timeProvider: TimeProvider(), timeStorage: TimeStorage())
         allItemsCollectionView.dataSource = self
         allItemsCollectionView.delegate = self
         allItemsCollectionView.register(UINib(nibName: "PhotoCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "PhotoCollectionViewCellReuseIdentifier")
@@ -47,8 +48,7 @@ class PhotoListViewController: UIViewController, PhotoListPresenterView {
         loadingIndicator.isHidden = true
         errorTextLabel.isHidden = true
 
-        let newItems = photos.map(PhotoListItem.init)
-        items.append(contentsOf: newItems)
+        items = photos.map(PhotoListItem.init)        
         allItemsCollectionView.reloadData()
     }
 }

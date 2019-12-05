@@ -1,4 +1,4 @@
-package com.karumi.gallery.data
+package com.karumi.gallery.data.network
 
 import com.karumi.gallery.generated.KotlinConfig
 import com.karumi.gallery.model.Photos

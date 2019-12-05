@@ -1,27 +1,21 @@
 package com.karumi.gallery.data.test
 
-import com.karumi.gallery.data.PhotosApiClient
 import com.karumi.gallery.data.getEngine
+import com.karumi.gallery.data.network.PhotosApiClient
 import com.karumi.gallery.model.Photos
 import kotlinx.coroutines.delay
 
 class PhotoApiClientStub(
-  private val stub: Stub
+  private val stub: PhotosStub
 ) : PhotosApiClient(getEngine(), "") {
 
   override suspend fun getPhotos(): Photos =
     when (stub) {
-      is Stub.Success -> stub.photos
-      is Stub.Error -> throw RuntimeException()
-      is Stub.Loading -> {
+      is PhotosStub.Success -> stub.photos
+      is PhotosStub.Error -> throw RuntimeException()
+      is PhotosStub.Loading -> {
         delay(10000)
         listOf()
       }
     }
-
-  sealed class Stub {
-    data class Success(val photos: Photos) : Stub()
-    object Error : Stub()
-    object Loading : Stub()
-  }
 }

@@ -1,0 +1,20 @@
+CREATE TABLE photo  (
+  id TEXT NOT NULL PRIMARY KEY,
+  thumbnail_url TEXT NOT NULL,
+  author_name TEXT NOT NULL,
+  number_of_likes INTEGER AS Int DEFAULT 0
+);
+
+insertPhoto:
+INSERT INTO photo(
+    id,
+    thumbnail_url,
+    author_name,
+    number_of_likes
+) VALUES (?, ?, ?, ?);
+
+getAll:
+SELECT * FROM photo;
+
+deleteAll:
+DELETE FROM photo;

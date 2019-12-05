@@ -54,6 +54,7 @@ dependencies {
   implementation("com.github.pedrovgs:renderers:3.4.0")
   implementation("com.squareup.okhttp3:okhttp:3.12.1")
   implementation("com.squareup.picasso:picasso:2.71828")
+  implementation("com.squareup.sqldelight:android-driver:1.1.3")
 
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.1")
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.1")
@@ -74,15 +75,18 @@ dependencies {
 }
 
 ktlint {
-  version.set("0.30.0")
+  version.set("0.36.0")
   debug.set(true)
   verbose.set(true)
   android.set(false)
   outputToConsole.set(true)
-  reporters.set(setOf(ReporterType.PLAIN, ReporterType.CHECKSTYLE))
+  reporters {
+    reporter(ReporterType.PLAIN)
+    reporter(ReporterType.CHECKSTYLE)
+  }
   ignoreFailures.set(true)
   filter {
-    exclude("**/generated/**")
+    exclude("**/build/**")
     include("**/kotlin/**")
   }
 }

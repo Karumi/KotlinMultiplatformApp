@@ -1,15 +1,15 @@
 package com.karumi.gallery
 
 import com.karumi.gallery.app.runBlocking
-import com.karumi.gallery.data.PhotosApiClient
+import com.karumi.gallery.data.network.PhotosApiClient
 import com.karumi.gallery.resources.getEmptyPhotosList
 import com.karumi.gallery.resources.getInvalidBody
 import com.karumi.gallery.resources.getPhotosResponse
-import kotlinx.serialization.json.JsonParsingException
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
+import kotlinx.serialization.json.JsonParsingException
 
 class PhotosApiClientTest : KtorClientMock() {
 
