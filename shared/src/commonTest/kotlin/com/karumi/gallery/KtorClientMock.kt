@@ -8,10 +8,10 @@ import io.ktor.http.ContentType.Application
 import io.ktor.http.HttpHeaders
 import io.ktor.http.HttpStatusCode
 import io.ktor.http.headersOf
+import kotlin.test.assertEquals
 import kotlinx.coroutines.io.ByteReadChannel
 import kotlinx.io.charsets.Charsets
 import kotlinx.io.core.toByteArray
-import kotlin.test.assertEquals
 
 typealias EnqueueResponse = () -> HttpResponseData
 

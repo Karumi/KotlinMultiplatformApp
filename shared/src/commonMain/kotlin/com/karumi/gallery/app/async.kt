@@ -1,10 +1,10 @@
 package com.karumi.gallery.app
 
+import kotlin.coroutines.CoroutineContext
+import kotlin.coroutines.EmptyCoroutineContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.Flow
-import kotlin.coroutines.CoroutineContext
-import kotlin.coroutines.EmptyCoroutineContext
 
 expect fun CoroutineScope.launchInMain(block: suspend CoroutineScope.() -> Unit): Job
 

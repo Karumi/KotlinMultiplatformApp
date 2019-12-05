@@ -165,14 +165,18 @@ task copyFramework {
 }
 
 ktlint {
-    version = "0.30.0"
+    version = "0.36.0"
     verbose = true
     android = false
     outputToConsole = true
-    reporters = [ReporterType.PLAIN, ReporterType.CHECKSTYLE]
+    reporters {
+        reporter(ReporterType.PLAIN)
+        reporter(ReporterType.CHECKSTYLE)
+    }
+    //Filters are not working properly
     filter {
-        exclude("**/generated/**")
-        include("**/kotlin/**")
+        //Hotfix https://github.com/JLLeitschuh/ktlint-gradle/issues/266#issuecomment-529527697
+        exclude { element -> element.file.path.contains("sqldelight/") }
     }
 }
 

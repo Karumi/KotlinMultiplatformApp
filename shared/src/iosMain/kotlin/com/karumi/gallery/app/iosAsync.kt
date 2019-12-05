@@ -1,6 +1,7 @@
 package com.karumi.gallery.app
 
 import com.karumi.gallery.logError
+import kotlin.coroutines.CoroutineContext
 import kotlinx.coroutines.CancellableContinuation
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
@@ -17,7 +18,6 @@ import platform.darwin.dispatch_after
 import platform.darwin.dispatch_async
 import platform.darwin.dispatch_get_main_queue
 import platform.darwin.dispatch_time
-import kotlin.coroutines.CoroutineContext
 
 actual fun CoroutineScope.launchInMain(block: suspend CoroutineScope.() -> Unit): Job =
   launch(MainDispatcher) { block() }

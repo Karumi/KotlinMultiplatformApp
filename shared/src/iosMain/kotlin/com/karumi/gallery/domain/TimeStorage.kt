@@ -1,7 +1,7 @@
 package com.karumi.gallery.domain
 
-import platform.Foundation.NSUserDefaults
 import kotlin.time.days
+import platform.Foundation.NSUserDefaults
 
 actual class TimeStorage {
 

@@ -75,15 +75,18 @@ dependencies {
 }
 
 ktlint {
-  version.set("0.30.0")
+  version.set("0.36.0")
   debug.set(true)
   verbose.set(true)
   android.set(false)
   outputToConsole.set(true)
-  reporters.set(setOf(ReporterType.PLAIN, ReporterType.CHECKSTYLE))
+  reporters {
+    reporter(ReporterType.PLAIN)
+    reporter(ReporterType.CHECKSTYLE)
+  }
   ignoreFailures.set(true)
   filter {
-    exclude("**/generated/**")
+    exclude("**/build/**")
     include("**/kotlin/**")
   }
 }

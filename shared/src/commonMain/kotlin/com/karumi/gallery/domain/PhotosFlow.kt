@@ -4,12 +4,12 @@ import com.karumi.gallery.data.local.LocalPhotosDataSource
 import com.karumi.gallery.data.network.PhotosApiClient
 import com.karumi.gallery.logInfo
 import com.karumi.gallery.model.Photos
+import kotlin.time.Duration
+import kotlin.time.seconds
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
-import kotlin.time.Duration
-import kotlin.time.seconds
 
 class PhotosFlow(
   private val photosApiClient: PhotosApiClient,

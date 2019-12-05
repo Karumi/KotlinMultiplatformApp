@@ -4,9 +4,9 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
 import com.karumi.gallery.data.local.LocalPhotosDataSource
-import com.karumi.gallery.test.PhotoListStub
 import com.karumi.gallery.data.network.PhotosApiClient
 import com.karumi.gallery.model.PhotoShot
+import com.karumi.gallery.test.PhotoListStub
 import com.karumi.photo.app.R
 import com.nhaarman.mockitokotlin2.doNothing
 import com.nhaarman.mockitokotlin2.doReturn

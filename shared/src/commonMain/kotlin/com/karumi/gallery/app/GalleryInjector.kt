@@ -1,9 +1,9 @@
 package com.karumi.gallery.app
 
-import com.karumi.gallery.data.network.PhotosApiClient
 import com.karumi.gallery.data.getEngine
 import com.karumi.gallery.data.local.LocalGalleryDb
 import com.karumi.gallery.data.local.LocalPhotosDataSource
+import com.karumi.gallery.data.network.PhotosApiClient
 import com.karumi.gallery.domain.PhotosFlow
 import com.karumi.gallery.domain.TTLCache
 import com.karumi.gallery.domain.TimeProvider
